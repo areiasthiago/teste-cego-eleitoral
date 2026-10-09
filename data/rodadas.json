@@ -614,8 +614,15 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Controlar o gasto exagerado em apostas online e colocar mais profissionais de saúde para atender quem ficou viciado em jogo.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com todas as bets: tanto os cassinos online, como o jogo do Tigrinho, quanto os sites de aposta em futebol e outros esportes.",
           "fontes": [
+            {
+              "tipo": "imprensa",
+              "veiculo": "Poder360",
+              "data": "2026-09-29",
+              "url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-diz-que-fim-das-bets-nao-acabara-com-futebol/",
+              "citacao": "Nós acabamos com as bets."
+            },
             {
               "tipo": "plano",
               "pagina": 49,
@@ -626,12 +633,28 @@
               "pagina": 39,
               "citacao": "Ampliaremos os profissionais e as estratégias voltadas às pessoas com problemas relacionados a jogos de apostas."
             }
-          ]
+          ],
+          "contexto": {
+            "texto": "A proibição das bets foi feita por medida provisória em 25/9/2026, depois de o plano de governo ter sido escrito. Para continuar valendo, ela precisa ser aprovada pelo Congresso em até 120 dias.",
+            "links": [
+              {
+                "rotulo": "Agência Brasil: o que muda com a MP das bets",
+                "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/entenda-medida-provisoria-e-projeto-que-proibem-bets-no-brasil"
+              }
+            ]
+          }
         },
         {
           "candidato": "flavio",
-          "texto": "Proibir que o dinheiro do Bolsa Família e de outros auxílios seja usado em apostas. E fazer campanhas avisando do risco de se endividar com jogo.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com os cassinos online, como o jogo do Tigrinho, mas trata diferente a aposta em jogos de verdade, como futebol, que para ele dá para controlar.",
           "fontes": [
+            {
+              "tipo": "imprensa",
+              "veiculo": "SBT News",
+              "data": "2026-09-23",
+              "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-quer-fim-do-jogo-do-tigrinho-e-culpa-lula-por-dividas",
+              "citacao": "O cassino online tem que acabar. A gente vai acabar com esse cassino online. [...] Mas aposta em jogos reais, um jogo de futebol, de vôlei, de tênis, você tem alguma forma de controle."
+            },
             {
               "tipo": "plano",
               "pagina": 33,
