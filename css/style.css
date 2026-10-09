@@ -237,13 +237,13 @@ main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 8px 16px
 }
 
 /* Topo do resultado compacto: título, placar e botões cabem na primeira tela do celular */
-.resultado { gap: 12px; }
-.resultado h1 { font-size: clamp(1.6rem, 7vw, 2.6rem); }
-.resultado .lado { padding: 10px 8px; }
-.resultado .lado.lider { padding-top: 10px; }
-.resultado .lado img { width: min(100%, 128px); }
-.resultado .lado strong { font-size: clamp(2rem, 10vw, 3rem); }
-.resultado .barra { height: 16px; }
+.resultado { gap: 14px; }
+.resultado h1 { font-size: clamp(1.7rem, 7.5vw, 2.8rem); }
+.resultado .lado { padding: 14px 8px 12px; }
+.resultado .lado.lider { padding-top: 14px; }
+.resultado .lado img { width: min(100%, 152px); }
+.resultado .lado strong { font-size: clamp(2.2rem, 11vw, 3.3rem); }
+.resultado .barra { height: 20px; }
 
 /* Dois botões lado a lado; sozinho, o botão ocupa a linha toda */
 .par { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; }
