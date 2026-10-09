@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=0.11';
+import { SITE } from './config.js?v=0.12';
 
 const L = 1080;
 const A = 1350;
