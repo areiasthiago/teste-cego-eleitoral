@@ -9,10 +9,9 @@ export const CONTAGEM = {
   chave: 'sb_publishable_WHaRKW6IwIHCMQcjKZaqAw_dhQ7-jst',
 };
 
-// Só para a fase de testes: recarregar a página recomeça o quiz.
-// Antes de divulgar, voltar para false (o resultado passa a ficar salvo no aparelho).
-export const REINICIAR_AO_RECARREGAR = true;
+// true só em fase de testes: recarregar a página recomeça o quiz.
+// Em produção fica false, e o resultado fica salvo no aparelho.
+export const REINICIAR_AO_RECARREGAR = false;
 
-// Só para a fase de testes: false não envia nada para a contagem.
-// Antes de divulgar, voltar para true.
-export const ENVIAR_CONTAGEM = false;
+// false só em fase de testes: não envia nada para a contagem.
+export const ENVIAR_CONTAGEM = true;

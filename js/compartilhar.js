@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=0.49';
+import { SITE } from './config.js?v=1.0';
 
 // Formato de story (9:16), com respiro em cima e embaixo para a interface do aplicativo.
 const L = 1080;
