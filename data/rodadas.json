@@ -710,6 +710,56 @@
           ]
         }
       ]
+    },
+    {
+      "id": "saude",
+      "area": "Saúde",
+      "tema": "Saúde e fila do SUS",
+      "pergunta": "Como diminuir a fila do SUS?",
+      "opcoes": [
+        {
+          "candidato": "lula",
+          "texto": "Aumentar a estrutura do próprio SUS: mais hospitais e aparelhos de exame na rede pública, mutirões de consultas e cirurgias, e remédios de graça nas farmácias conveniadas.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 37,
+              "citacao": "Continuaremos investindo para garantir à rede pública equipamentos modernos e em número suficiente para atender a população."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 37,
+              "citacao": "A expansão do terceiro turno nos serviços de saúde, o reforço das Carretas da Saúde e dos mutirões de atendimento seguirão como estratégias centrais para ampliar a oferta de consultas, exames e cirurgias em todo o país."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 36,
+              "citacao": "O programa será mantido, 100% gratuito, assegurando contínua revisão dos medicamentos ofertados e a continuidade da distribuição de fraldas geriátricas."
+            }
+          ]
+        },
+        {
+          "candidato": "flavio",
+          "texto": "Aproveitar a estrutura que existe em vez de construir do zero: pagar exames na rede particular nos horários vagos, aumentar o que o SUS paga a hospitais e santas casas, e entregar remédio em casa a idosos e doentes crônicos.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 37,
+              "citacao": "vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 37,
+              "citacao": "Vamos garantir as condições para que seja possível a correção efetiva da tabela SUS."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 38,
+              "citacao": "um sistema de entrega de remédio em domicílio vai garantir que o idoso, a pessoa com deficiência e o doente crônico não precisem escolher entre buscar o tratamento e pagar o transporte."
+            }
+          ]
+        }
+      ]
     }
   ]
 }
