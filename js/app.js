@@ -184,7 +184,11 @@ function telaResultado() {
         rodada.opcoes.map((opcao) => el('div', { class: `proposta ${opcao.candidato === escolha ? 'escolhida' : ''}` },
           el('h4', {}, nome(opcao.candidato)),
           el('p', {}, opcao.texto),
-          el('ul', { class: 'fontes' }, opcao.fontes.map((f) => fonte(opcao.candidato, f))))));
+          el('ul', { class: 'fontes' }, opcao.fontes.map((f) => fonte(opcao.candidato, f))),
+          opcao.contexto && el('aside', { class: 'contexto' },
+            el('strong', {}, 'Contexto'),
+            el('p', {}, opcao.contexto.texto),
+            el('p', {}, opcao.contexto.links.flatMap((l, i) => [i > 0 && ' · ', el('a', { href: l.url, target: '_blank', rel: 'noopener noreferrer' }, l.rotulo)]))))));
     }));
 
   mostrar(

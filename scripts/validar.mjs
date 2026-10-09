@@ -11,8 +11,14 @@ const VEICULOS = [
   'valor.globo.com', 'cnnbrasil.com.br', 'bbc.com', 'poder360.com.br', 'agenciabrasil.ebc.com.br',
   'reuters.com', 'jota.info', 'nexojornal.com.br', 'piaui.folha.uol.com.br', 'sbtnews.sbt.com.br',
   'congressoemfoco.com.br', 'terra.com.br', 'correiobraziliense.com.br', 'metropoles.com',
-  'diariodonordeste.verdesmares.com.br',
+  'diariodonordeste.verdesmares.com.br', 'em.com.br',
 ];
+
+const AVISO_FORA_DO_PLANO = 'Apesar de não constar no plano oficial';
+const aceito = (url) => {
+  const host = new URL(url).hostname.replace(/^www./, '');
+  return VEICULOS.some((v) => host === v || host.endsWith(`.${v}`));
+};
 
 const normalizar = (s) => s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
 
@@ -45,6 +51,16 @@ for (const r of rodadas) {
   for (const o of r.opcoes) {
     const quem = `${onde} ${o.candidato}`;
     if (!o.fontes?.length) erros.push(`${quem}: sem fonte`);
+    // Posição que vem de declaração, e não do plano, tem de avisar isso no próprio cartão.
+    const foraDoPlano = o.fontes?.[0]?.tipo === 'imprensa';
+    if (foraDoPlano !== o.texto.includes(AVISO_FORA_DO_PLANO)) erros.push(`${quem}: aviso "${AVISO_FORA_DO_PLANO}" ${foraDoPlano ? 'faltando' : 'sobrando'}`);
+    if (o.contexto) {
+      if (!o.contexto.texto || !o.contexto.links?.length) erros.push(`${quem}: contexto sem texto ou sem link`);
+      for (const l of o.contexto.links ?? []) {
+        if (!aceito(l.url)) erros.push(`${quem}: link de contexto fora da lista (${l.url})`);
+        links.push({ quem, url: l.url });
+      }
+    }
     // Palavras que denunciam quem está no governo ou na oposição quebram o teste cego.
     const pista = o.texto.match(/(?<!\p{L})(mant[eé]\p{L}*|seguir|segue|seguindo|continu\p{L}*|retom\p{L}*|reaproxim\p{L}*|rever|revis\p{L}*|voltar|volte|atual|atuais|recentes?|hoje|já)(?!\p{L})/iu);
     if (pista) erros.push(`${quem}: o cartão dá pista de situação/oposição ("${pista[0]}")`);

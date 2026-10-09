@@ -339,6 +339,7 @@ main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 8px 16px
 .proposta h4 { margin-bottom: 4px; }
 .fontes { margin: 8px 0 0; padding-left: 18px; color: var(--suave); font-size: 0.88rem; }
 .fontes li + li { margin-top: 6px; }
+.contexto { display: grid; gap: 4px; margin-top: 10px; padding: 10px 12px; border-left: 5px solid var(--ambar); border-radius: 8px; background: var(--ambar-claro); font-size: 0.9rem; }
 
 .rodape {
   display: flex;

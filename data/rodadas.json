@@ -83,7 +83,7 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Sim. Acabar com a 6x1 por lei e baixar a jornada para 40 horas por semana, sem diminuir o salário. Vale para todos os trabalhadores.",
+          "texto": "Sim. Acabar com a 6x1 por lei e baixar a jornada para 40 horas por semana, sem diminuir o salário. A regra vale para todos os trabalhadores do país.",
           "fontes": [
             {
               "tipo": "plano",
@@ -94,7 +94,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Não por lei. Em vez de proibir a 6x1, cada trabalhador combina com a empresa quantas horas quer trabalhar: quem quiser trabalha mais, quem quiser trabalha menos.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que é contra acabar com a 6x1 por lei. Cada trabalhador combina com a empresa quantas horas quer trabalhar: quem quiser trabalha mais, quem quiser trabalha menos.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -120,19 +120,31 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Aumentar o salário mínimo todo ano acima da inflação, ou seja, mais do que os preços subiram.",
+          "texto": "Aumentar o salário mínimo todo ano acima da inflação, ou seja, mais do que os preços subiram. O aumento vale também para aposentadorias e benefícios ligados ao mínimo.",
           "fontes": [
             {
               "tipo": "plano",
               "pagina": 74,
               "citacao": "o novo mandato de Lula dará continuidade à política de valorização do salário mínimo como meio estratégico de distribuição de renda, combate à pobreza e promoção do desenvolvimento econômico e social."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 19,
+              "citacao": "Reinstituímos a política de valorização do salário-mínimo, que assegurou ganhos reais para trabalhadores, aposentados e beneficiários do BPC."
             }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Não cortar nada do salário mínimo nem das aposentadorias. Para o dinheiro render mais, diminuir os gastos do governo e baixar impostos.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que não haverá cortes no salário mínimo nem nas aposentadorias, que seguem com aumento acima da inflação. A economia viria de menos gastos do governo e menos impostos.",
           "fontes": [
+            {
+              "tipo": "imprensa",
+              "veiculo": "Poder360",
+              "data": "2026-10-08",
+              "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-nega-corte-em-aposentadoria-e-cita-reajuste-acima-da-inflacao/",
+              "citacao": "Aposentado, fique tranquilo. Não caia nessa fake news do PT, dizendo que eu vou acabar com reajuste da aposentadoria"
+            },
             {
               "tipo": "imprensa",
               "veiculo": "SBT News",
@@ -140,7 +152,20 @@
               "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-bolsonaro-promete-preservar-valor-do-salario-minimo",
               "citacao": "Eu não farei economia com quem ganha salário mínimo, não farei economia com aposentados. Eu vou fazer economia cortando corrupção, fazendo um 'tesouraço' na burocracia e reduzindo os impostos."
             }
-          ]
+          ],
+          "contexto": {
+            "texto": "Segundo a Folha de S.Paulo, a equipe econômica do candidato estuda limitar o reajuste de aposentadorias e do BPC à inflação, sem repassar os aumentos reais do salário mínimo. Ele negou em 8/10/2026, e a campanha diz que esses estudos não são posição oficial.",
+            "links": [
+              {
+                "rotulo": "Estado de Minas, 08/10/2026 (o estudo)",
+                "url": "https://www.em.com.br/politica/2026/10/7516985-flavio-considera-limitar-reajuste-de-aposentadorias-e-bpc.html"
+              },
+              {
+                "rotulo": "Poder360, 08/10/2026 (a negativa)",
+                "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-nega-corte-em-aposentadoria-e-cita-reajuste-acima-da-inflacao/"
+              }
+            ]
+          }
         }
       ]
     },
@@ -377,7 +402,7 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Discutir um tempo certo para cada ministro ficar no cargo, em vez de ficar até se aposentar, e uma nova forma de escolher quem entra.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer discutir um tempo certo para cada ministro ficar no cargo, em vez de ficar até se aposentar, e uma nova forma de escolher quem entra.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -390,7 +415,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Limitar as decisões tomadas por um ministro sozinho: o grupo decide junto. E deputados e senadores passam a ser julgados por outros tribunais.",
+          "texto": "Limitar as decisões tomadas por um ministro sozinho: o grupo de ministros decide junto. E deputados e senadores passam a ser julgados por outros tribunais, não mais pelo STF.",
           "fontes": [
             {
               "tipo": "plano",
