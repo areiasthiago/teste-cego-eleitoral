@@ -45,6 +45,39 @@
   color-scheme: dark;
 }
 
+/* Paletas em avaliação: abrir o site com ?paleta=a, b ou c. As variáveis --roxo e --rosa
+   são a cor principal e a de destaque, seja qual for o tom. */
+:root[data-paleta="a"] { /* Grafite e laranja */
+  --fundo: #f6f4f1; --linha: #d8d4cd; --suave: #5f5a55; --tinta: #1c1a1f; --traco: #1c1a1f; --sombra: #1c1a1f;
+  --roxo: #2b2832; --roxo-tinta: #ffffff; --roxo-claro: #e7e4ea;
+  --rosa: #ff8a3d; --rosa-tinta: #1c1a1f; --rosa-claro: #ffe6d4; --link: #b34a00;
+}
+:root[data-paleta="a"][data-theme="dark"] {
+  --fundo: #151416; --papel: #222026; --linha: #3b3840; --suave: #b5b0ba; --tinta: #f4f2f6; --traco: #f4f2f6; --sombra: #000000;
+  --roxo: #dcd8e4; --roxo-tinta: #151416; --roxo-claro: #34313b;
+  --rosa: #ff9a57; --rosa-tinta: #151416; --rosa-claro: #4a2c17; --link: #ffb07a;
+}
+:root[data-paleta="b"] { /* Preto e branco com roxo */
+  --fundo: #f7f7f8; --linha: #d6d6dc; --suave: #5c5c66; --tinta: #121214; --traco: #121214; --sombra: #121214;
+  --roxo: #6d3bf5; --roxo-tinta: #ffffff; --roxo-claro: #e9e1ff;
+  --rosa: #121214; --rosa-tinta: #ffffff; --rosa-claro: #e6e6ea; --link: #5a2ee0;
+}
+:root[data-paleta="b"][data-theme="dark"] {
+  --fundo: #0f0f11; --papel: #1c1c20; --linha: #37373e; --suave: #b0b0ba; --tinta: #f5f5f7; --traco: #f5f5f7; --sombra: #000000;
+  --roxo: #9b7bff; --roxo-tinta: #0f0f11; --roxo-claro: #2a2447;
+  --rosa: #f5f5f7; --rosa-tinta: #0f0f11; --rosa-claro: #303036; --link: #b9a3ff;
+}
+:root[data-paleta="c"] { /* Berinjela e pêssego */
+  --fundo: #faf5f2; --linha: #e0d5d0; --suave: #6a5a66; --tinta: #24122c; --traco: #24122c; --sombra: #24122c;
+  --roxo: #4f1f66; --roxo-tinta: #ffffff; --roxo-claro: #ecdff2;
+  --rosa: #ffb59a; --rosa-tinta: #24122c; --rosa-claro: #ffe9e0; --link: #6b2a8a;
+}
+:root[data-paleta="c"][data-theme="dark"] {
+  --fundo: #17101b; --papel: #251a2b; --linha: #45344d; --suave: #bdaec4; --tinta: #f8f1fa; --traco: #f8f1fa; --sombra: #000000;
+  --roxo: #cfa3e8; --roxo-tinta: #17101b; --roxo-claro: #3a2647;
+  --rosa: #ffb59a; --rosa-tinta: #24122c; --rosa-claro: #4d2f26; --link: #dcb8f0;
+}
+
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 
