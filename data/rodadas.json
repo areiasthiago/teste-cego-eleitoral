@@ -170,40 +170,40 @@
       ]
     },
     {
-      "id": "leis-trabalhistas",
+      "id": "aplicativos",
       "area": "Trabalho e salário",
-      "tema": "Direitos do trabalhador",
-      "pergunta": "O que mudar nas regras de trabalho?",
+      "tema": "Motoristas e entregadores de aplicativo",
+      "pergunta": "O que fazer por motoristas e entregadores de aplicativo?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Mudar leis que pioraram as condições de trabalho, combater o uso de terceirizados para driblar direitos trabalhistas e dar mais força aos sindicatos na hora de negociar.",
+          "texto": "Criar regras para as empresas de aplicativo: definir como é a relação de trabalho, o pagamento, as condições, os direitos e a aposentadoria, e obrigar o aplicativo a explicar como distribui corridas e calcula os ganhos.",
           "fontes": [
             {
               "tipo": "plano",
-              "pagina": 75,
-              "citacao": "Vamos aprimorar a legislação trabalhista, alterando regras que induzem a precarização das condições de trabalho, os marcos regressivos contidos na legislação, as fraudes presentes em muitas terceirizações"
+              "pagina": 74,
+              "citacao": "Queremos consolidar um sistema de proteção aos trabalhadores na economia"
             },
             {
               "tipo": "plano",
-              "pagina": 76,
-              "citacao": "Reafirmamos nosso compromisso com o fortalecimento da negociação coletiva e com a atualização do sistema sindical de representação coletiva de interesse."
+              "pagina": 75,
+              "citacao": "que normatize de forma adequada a atividade empresarial e estabeleça as regras para definir a relação de trabalho, a remuneração, condições de trabalho, proteções e direitos laborais e previdenciários, transparência algorítmica."
             }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Deixar mais barato para a empresa contratar com carteira assinada, com contratos especiais para jovens e para quem tem mais de 50 anos. E diminuir o poder dos sindicatos.",
+          "texto": "Preservar o trabalho por aplicativo como fonte de renda e garantir proteção social e aposentadoria a esses trabalhadores, sem deixar os sindicatos à frente das decisões.",
           "fontes": [
             {
               "tipo": "plano",
-              "pagina": 43,
-              "citacao": "Vamos reduzir gradualmente o custo do trabalho, sem retirar direitos, para que mais brasileiros tenham carteira assinada e a proteção que vem com ela."
+              "pagina": 45,
+              "citacao": "Nosso projeto garante a manutenção das oportunidades de renda e de trabalho trazidas pelo trabalho por aplicativos."
             },
             {
               "tipo": "plano",
-              "pagina": 44,
-              "citacao": "O país precisa se posicionar contra a República Sindical, em que os interesses de dirigentes das entidades se sobrepõem ao interesse dos trabalhadores."
+              "pagina": 45,
+              "citacao": "Esses trabalhadores serão protegidos, sem os interesses de dirigentes sindicais a frente do processo."
             }
           ]
         }
