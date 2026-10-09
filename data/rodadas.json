@@ -430,7 +430,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Mais escolas cívico-militares, com militares cuidando da disciplina. Dinheiro para a escola conforme os alunos aprendem. E, se faltar vaga, o governo paga a matrícula em outra escola.",
+          "texto": "Mais escolas cívico-militares, com militares cuidando da disciplina. Dinheiro para a escola conforme os alunos aprendem. E, se faltar vaga na escola pública, o governo paga a matrícula em escola particular.",
           "fontes": [
             {
               "tipo": "plano",
@@ -441,6 +441,11 @@
               "tipo": "plano",
               "pagina": 36,
               "citacao": "onde faltar vaga na rede pública, a família receberá um voucher educacional para matricular o filho em outra escola"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 21,
+              "citacao": "Onde não houver vaga na rede pública, a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir"
             }
           ]
         }
