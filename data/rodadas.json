@@ -614,7 +614,7 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com todas as bets: tanto os cassinos online, como o jogo do Tigrinho, quanto os sites de aposta em futebol e outros esportes.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com todo tipo de site de aposta e cassino online.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -646,7 +646,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com os cassinos online, como o jogo do Tigrinho, mas trata diferente a aposta em jogos de verdade, como futebol, que para ele dá para controlar.",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que quer acabar com os cassinos online, mas permitir apostas esportivas com regras.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -654,6 +654,13 @@
               "data": "2026-09-23",
               "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-quer-fim-do-jogo-do-tigrinho-e-culpa-lula-por-dividas",
               "citacao": "O cassino online tem que acabar. A gente vai acabar com esse cassino online. [...] Mas aposta em jogos reais, um jogo de futebol, de vôlei, de tênis, você tem alguma forma de controle."
+            },
+            {
+              "tipo": "imprensa",
+              "veiculo": "Metrópoles",
+              "data": "2026-09-25",
+              "url": "https://www.metropoles.com/brasil/flavio-bolsonaro-critica-proibicao-as-bets-lula-e-o-pai-do-tigrinho",
+              "citacao": "Uma coisa é você permitir que brasileiros, por livre e espontânea vontade, possam apostar em jogos que são reais"
             },
             {
               "tipo": "plano",
