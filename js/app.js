@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=1.2';
-import { registrar } from './contagem.js?v=1.2';
-import { compartilhar } from './compartilhar.js?v=1.2';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.2';
+import { calcular } from './pontuacao.js?v=1.3';
+import { registrar } from './contagem.js?v=1.3';
+import { compartilhar } from './compartilhar.js?v=1.3';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.3';
 
 const CHAVE = 'teste-cego:v2';
 const app = document.getElementById('app');
@@ -234,10 +234,10 @@ function telaResultado() {
       !res.pct && el('p', {}, 'Sem escolhas não há percentual, mas você pode ver abaixo de quem era cada proposta.'),
       placar,
       res.pct && el('div', { class: 'barra', 'aria-hidden': 'true' }, lados.map((lado) => el('span', { style: `width:${lado.pct}%` }))),
-      res.pct && el('p', { class: 'creditos' }, 'Ilustrações geradas por inteligência artificial.'),
-      el('button', { class: 'botao principal', onclick: () => compartilhar(convite, true) }, 'Convidar alguém para o teste'),
-      res.pct && el('button', { class: 'botao discreto', onclick: () => compartilhar(lados) }, 'Compartilhar com o meu resultado'),
-      el('p', { class: 'aviso' }, 'O percentual mede só as propostas deste teste, resumidas por nós. Não é pesquisa eleitoral nem recomendação de voto. ',
+      el('div', { class: 'par' },
+        el('button', { class: 'botao principal', onclick: () => compartilhar(convite, true) }, 'Convidar alguém'),
+        res.pct && el('button', { class: 'botao discreto', onclick: () => compartilhar(lados) }, 'Compartilhar meu resultado')),
+      el('p', { class: 'aviso' }, 'O percentual mede só as propostas deste teste, resumidas por nós. Não é pesquisa eleitoral nem recomendação de voto. Ilustrações geradas por inteligência artificial. ',
         el('a', { href: 'sobre.html' }, 'Como funciona'), '.'),
       areas,
       revelacao,
@@ -246,7 +246,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=1.2')).json();
+  dados = await (await fetch('data/rodadas.json?v=1.3')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.
