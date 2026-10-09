@@ -85,6 +85,12 @@ function telaRodada() {
   const opcoes = estado.invertida[rodada.id] ? [...rodada.opcoes].reverse() : rodada.opcoes;
   const peso = el('input', { type: 'checkbox', id: 'peso' });
 
+  const voltar = () => {
+    delete estado.respostas[rodadas[indice - 1].id];
+    salvar();
+    telaRodada();
+  };
+
   const responder = (escolha) => {
     estado.respostas[rodada.id] = { escolha, peso: peso.checked ? 2 : 1 };
     salvar();
@@ -103,6 +109,7 @@ function telaRodada() {
           el('span', { class: 'texto' }, opcao.texto)))),
       el('label', { class: 'peso', for: 'peso' }, peso, ' Esse tema pesa muito pra mim (vale em dobro)'),
       el('button', { class: 'botao discreto', onclick: () => responder(null) }, 'Nenhuma das duas / tanto faz'),
+      indice > 0 && el('button', { class: 'botao voltar', onclick: voltar }, '← Voltar à pergunta anterior'),
     ),
   );
 }

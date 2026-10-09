@@ -75,6 +75,7 @@ a { color: var(--destaque); }
 }
 .botao.principal { background: var(--destaque); color: var(--destaque-tinta); }
 .botao.discreto { background: none; border-color: var(--linha); color: var(--suave); font-weight: 600; }
+.botao.voltar { align-self: flex-start; padding: 8px 4px; background: none; color: var(--suave); font-weight: 600; }
 .botao:focus-visible, .cartao:focus-visible, summary:focus-visible, a:focus-visible {
   outline: 3px solid var(--destaque);
   outline-offset: 3px;
