@@ -63,13 +63,31 @@ function mostrar(...nos) {
   app.querySelector('h1, h2')?.focus();
 }
 
+// Faixa horizontal com encaixe; as setas e o contador servem a quem não desliza.
+function carrossel(rotulo, slides) {
+  const trilho = el('div', { class: 'trilho', tabindex: '0', role: 'group', 'aria-label': rotulo }, slides);
+  const contador = el('span', { class: 'contador', 'aria-live': 'polite' }, `1/${slides.length}`);
+  const passo = () => trilho.scrollWidth / slides.length;
+  const ir = (direcao) => trilho.scrollBy({ left: direcao * passo(), behavior: 'smooth' });
+  trilho.addEventListener('scroll', () => {
+    const atual = Math.min(slides.length, Math.round(trilho.scrollLeft / passo()) + 1);
+    contador.textContent = `${atual}/${slides.length}`;
+  }, { passive: true });
+  return el('div', { class: 'carrossel' },
+    trilho,
+    el('div', { class: 'controles' },
+      el('button', { class: 'seta', type: 'button', 'aria-label': 'Anterior', onclick: () => ir(-1) }, '‹'),
+      contador,
+      el('button', { class: 'seta', type: 'button', 'aria-label': 'Próxima', onclick: () => ir(1) }, '›')));
+}
+
 function telaInicio() {
   mostrar(
     el('section', { class: 'tela inicio' },
       el('p', { class: 'selo' }, 'Eleições 2026 · 2º turno'),
       el('h1', { tabindex: '-1' }, 'Escolha a proposta ', el('span', { class: 'destaque' }, 'sem saber de quem é')),
       el('p', { class: 'chamada' }, 'Lula ou Flávio Bolsonaro? Aqui você julga só as ideias. O nome aparece no final.'),
-      el('ol', { class: 'passos' },
+      el('ol', { class: 'passos trilho' },
         el('li', {}, 'Leia duas propostas sobre o mesmo assunto'),
         el('li', {}, 'Toque na que mais combina com você'),
         el('li', {}, 'No final, veja de quem era cada uma')),
@@ -106,6 +124,10 @@ function telaRodada() {
     setTimeout(telaRodada, 260);
   };
 
+  const cartao = (i) => el('button', { class: `cartao ${'ab'[i]}`, onclick: (e) => responder(opcoes[i].candidato, e.currentTarget) },
+    el('span', { class: 'letra' }, `Proposta ${'AB'[i]}`),
+    el('span', { class: 'texto' }, opcoes[i].texto));
+
   mostrar(
     el('section', { class: 'tela rodada' },
       el('div', { class: 'andamento' },
@@ -115,14 +137,16 @@ function telaRodada() {
       el('p', { class: 'selo' }, rodada.tema),
       el('h2', { tabindex: '-1' }, rodada.pergunta),
       el('div', { class: 'cartoes' },
-        opcoes.map((opcao, i) => el('button', { class: `cartao ${'ab'[i]}`, onclick: (e) => responder(opcao.candidato, e.currentTarget) },
-          el('span', { class: 'letra' }, `Proposta ${'AB'[i]}`),
-          el('span', { class: 'texto' }, opcao.texto))),
-        el('span', { class: 'ou', 'aria-hidden': 'true' }, 'ou')),
-      el('label', { class: 'peso', for: 'peso' }, peso, 'Esse assunto é muito importante pra mim (vale em dobro)'),
-      el('button', { class: 'botao discreto', onclick: () => responder(null) }, 'Nenhuma das duas / tanto faz'),
-      indice > 0 && el('button', { class: 'botao voltar', onclick: voltar }, '← Voltar à pergunta anterior'),
+        cartao(0),
+        el('span', { class: 'ou', 'aria-hidden': 'true' }, 'ou'),
+        cartao(1)),
     ),
+    // Fora da <section>: a animação de entrada dela prenderia um elemento fixo.
+    el('nav', { class: 'acoes', 'aria-label': 'Outras opções' },
+      el('div', { class: 'acoes-dentro' },
+        el('button', { class: 'acao', type: 'button', onclick: voltar, disabled: indice === 0 }, el('b', {}, '← Voltar'), el('small', {}, 'pergunta anterior')),
+        el('button', { class: 'acao', type: 'button', onclick: () => responder(null) }, el('b', {}, 'Tanto faz'), el('small', {}, 'nenhuma das duas')),
+        el('label', { class: 'acao peso', for: 'peso' }, peso, el('b', {}, 'Vale em dobro'), el('small', {}, 'assunto importante')))),
   );
 }
 
@@ -176,20 +200,21 @@ function telaResultado() {
 
   const revelacao = el('section', { class: 'bloco' },
     el('h3', {}, 'De quem era cada proposta'),
-    rodadas.map((rodada) => {
+    carrossel('Propostas reveladas', rodadas.map((rodada) => {
       const escolha = estado.respostas[rodada.id]?.escolha;
-      return el('details', { class: 'revelada' },
-        el('summary', {}, el('span', {}, rodada.tema), el('em', {}, escolha ? `Você ficou com ${nome(escolha)}` : 'Você não escolheu')),
+      return el('article', { class: 'revelada' },
+        el('p', { class: 'selo' }, rodada.tema),
         el('p', { class: 'pergunta' }, rodada.pergunta),
         rodada.opcoes.map((opcao) => el('div', { class: `proposta ${opcao.candidato === escolha ? 'escolhida' : ''}` },
-          el('h4', {}, nome(opcao.candidato)),
+          el('h4', {}, nome(opcao.candidato), opcao.candidato === escolha && el('span', { class: 'sua' }, 'sua escolha')),
           el('p', {}, opcao.texto),
-          el('ul', { class: 'fontes' }, opcao.fontes.map((f) => fonte(opcao.candidato, f))),
+          el('details', {}, el('summary', {}, 'Ver trecho original e fonte'),
+            el('ul', { class: 'fontes' }, opcao.fontes.map((f) => fonte(opcao.candidato, f)))),
           opcao.contexto && el('aside', { class: 'contexto' },
             el('strong', {}, 'Contexto'),
             el('p', {}, opcao.contexto.texto),
             el('p', {}, opcao.contexto.links.flatMap((l, i) => [i > 0 && ' · ', el('a', { href: l.url, target: '_blank', rel: 'noopener noreferrer' }, l.rotulo)]))))));
-    }));
+    })));
 
   mostrar(
     el('section', { class: 'tela resultado' },
