@@ -1,4 +1,4 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.7';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.8';
 
 const MEDIDO = 'teste-cego:medido';
 
@@ -35,6 +35,11 @@ export function marcar(evento, { novo = false } = {}) {
   } catch {
     // Sem armazenamento não dá para contar uma vez só; melhor não contar.
   }
+}
+
+// Quem ficou na frente neste teste: 'lula', 'flavio' ou 'empate'. Soma em um de três totais.
+export function resultado(lider) {
+  return chamar('resultado', { lider });
 }
 
 // Envia só pares (rodada, lado escolhido). Sem identificador, sem percentual

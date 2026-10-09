@@ -7,7 +7,7 @@ const { rodadas } = JSON.parse(readFileSync(new URL('data/rodadas.json', raiz), 
 
 const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
-  .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')")
+  .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
   .join(',\n');
 
 const sql = `-- Gerado por scripts/gerar-sql.mjs. Rode no SQL Editor do Supabase.
@@ -68,6 +68,20 @@ $$;
 
 revoke all on function public.marcar(text) from public;
 grant execute on function public.marcar(text) to anon;
+
+-- Quem ficou na frente em cada teste concluído. Só três totais: lula, flavio e empate.
+create or replace function public.resultado(lider text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  update contagem set total = total + 1
+   where rodada = '_resultado' and candidato = lider and lider in ('lula', 'flavio', 'empate');
+$$;
+
+revoke all on function public.resultado(text) from public;
+grant execute on function public.resultado(text) to anon;
 `;
 
 writeFileSync(new URL('sql/contagem.sql', raiz), sql);
