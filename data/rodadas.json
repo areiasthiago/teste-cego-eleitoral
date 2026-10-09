@@ -13,12 +13,12 @@
     {
       "id": "crime-organizado",
       "area": "Segurança",
-      "tema": "Crime organizado",
-      "pergunta": "Qual deve ser a prioridade no combate às facções?",
+      "tema": "Facções criminosas",
+      "pergunta": "Como combater as facções criminosas?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Sufocar o dinheiro das facções e milícias com investigação e inteligência integradas entre União, estados e municípios, somando prevenção e mais presença do Estado em favelas e periferias.",
+          "texto": "Ir atrás do dinheiro das facções e milícias, com polícia de investigação e trabalho em conjunto entre governo federal, estados e prefeituras. E levar mais serviços públicos para favelas e periferias.",
           "fontes": [
             {
               "tipo": "plano",
@@ -29,7 +29,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Classificar facções e milícias como organizações terroristas e combatê-las com força policial e militar, incluindo uma tropa de elite das Forças Armadas nas fronteiras e confronto direto com criminosos armados.",
+          "texto": "Tratar facções e milícias como grupos terroristas e partir para o confronto, com polícia e Forças Armadas. E colocar uma tropa de elite nas fronteiras para barrar armas e drogas.",
           "fontes": [
             {
               "tipo": "plano",
@@ -43,12 +43,12 @@
     {
       "id": "presidios",
       "area": "Segurança",
-      "tema": "Presídios e penas",
-      "pergunta": "O que fazer com o sistema prisional?",
+      "tema": "Cadeias e penas",
+      "pergunta": "O que fazer com as cadeias e as penas?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Reforçar os presídios federais para isolar chefes do crime e padronizar a gestão das penitenciárias estaduais, com foco em reduzir a reincidência e garantir direitos.",
+          "texto": "Melhorar a administração das cadeias e isolar os chefes do crime em presídios federais. O foco é o preso não cair de novo no crime quando sair.",
           "fontes": [
             {
               "tipo": "plano",
@@ -59,7 +59,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Construir 5 presídios de segurança máxima, abrir 500 mil vagas em quatro anos e acabar com a progressão de regime para crimes hediondos, com cumprimento integral da pena.",
+          "texto": "Construir 5 presídios de segurança máxima e abrir 500 mil vagas em cadeias. Quem cometer crime muito grave cumpre a pena inteira, sem sair mais cedo.",
           "fontes": [
             {
               "tipo": "plano",
@@ -77,13 +77,13 @@
     },
     {
       "id": "escala-6x1",
-      "area": "Trabalho e renda",
+      "area": "Trabalho e salário",
       "tema": "Escala 6x1",
-      "pergunta": "A escala 6x1 (seis dias de trabalho, um de folga) deve acabar?",
+      "pergunta": "A escala 6x1 (trabalhar 6 dias e folgar 1) deve acabar?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Sim: acabar com a escala 6x1 por lei e reduzir a jornada para 40 horas semanais, sem redução de salário, valendo para todos os trabalhadores.",
+          "texto": "Sim. Acabar com a 6x1 por lei e baixar a jornada para 40 horas por semana, sem diminuir o salário. Vale para todos os trabalhadores.",
           "fontes": [
             {
               "tipo": "plano",
@@ -94,7 +94,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Não por lei: em vez de proibir a 6x1, deixar cada trabalhador combinar a própria carga horária direto com a empresa, trabalhando mais ou menos conforme escolher.",
+          "texto": "Não por lei. Em vez de proibir a 6x1, cada trabalhador combina com a empresa quantas horas quer trabalhar: quem quiser trabalha mais, quem quiser trabalha menos.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -114,13 +114,13 @@
     },
     {
       "id": "salario-minimo",
-      "area": "Trabalho e renda",
+      "area": "Trabalho e salário",
       "tema": "Salário mínimo",
-      "pergunta": "Como melhorar a renda de quem ganha salário mínimo?",
+      "pergunta": "O que fazer pelo bolso de quem ganha salário mínimo?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Reajustar o salário mínimo acima da inflação todos os anos, como forma de distribuir renda e combater a pobreza.",
+          "texto": "Aumentar o salário mínimo todo ano acima da inflação, ou seja, mais do que os preços subiram.",
           "fontes": [
             {
               "tipo": "plano",
@@ -131,7 +131,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Garantir que salário mínimo e aposentadorias não sofram cortes, e aumentar o poder de compra por outro caminho: menos gastos do governo e menos impostos.",
+          "texto": "Não cortar nada do salário mínimo nem das aposentadorias. Para o dinheiro render mais, diminuir os gastos do governo e baixar impostos.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -146,13 +146,13 @@
     },
     {
       "id": "leis-trabalhistas",
-      "area": "Trabalho e renda",
-      "tema": "Leis trabalhistas e sindicatos",
-      "pergunta": "O que deve mudar nas regras do trabalho?",
+      "area": "Trabalho e salário",
+      "tema": "Direitos do trabalhador",
+      "pergunta": "O que mudar nas regras de trabalho?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Mudar regras trabalhistas que tornam o emprego precário, coibir fraudes em terceirizações e fortalecer a negociação coletiva feita pelos sindicatos.",
+          "texto": "Mudar leis que pioraram as condições de trabalho, combater o uso de terceirizados para fugir de direitos e dar mais força aos sindicatos na hora de negociar.",
           "fontes": [
             {
               "tipo": "plano",
@@ -168,7 +168,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Baratear a contratação com carteira assinada reduzindo encargos, criar contratos especiais para jovens e maiores de 50 anos e diminuir o poder dos sindicatos.",
+          "texto": "Deixar mais barato para a empresa contratar com carteira assinada, com contratos especiais para jovens e para quem tem mais de 50 anos. E diminuir o poder dos sindicatos.",
           "fontes": [
             {
               "tipo": "plano",
@@ -186,13 +186,13 @@
     },
     {
       "id": "programas-sociais",
-      "area": "Proteção social",
-      "tema": "Programas sociais",
-      "pergunta": "Qual deve ser o rumo de programas como o Bolsa Família?",
+      "area": "Família e proteção",
+      "tema": "Bolsa Família e auxílios",
+      "pergunta": "O que fazer com o Bolsa Família e outros auxílios?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Ampliar os programas de transferência de renda para quem mais precisa e tratá-los como parte permanente da rede de proteção social, junto com saúde, educação e inclusão produtiva.",
+          "texto": "Fazer os auxílios chegarem a mais gente que precisa. Eles são uma proteção permanente, junto com saúde, educação e apoio para conseguir renda.",
           "fontes": [
             {
               "tipo": "plano",
@@ -203,7 +203,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Garantir os programas de transferência de renda, combater fraudes e tratá-los como ponto de partida: quem recebe tem prioridade em qualificação e emprego, até não precisar mais do benefício.",
+          "texto": "Garantir os auxílios, combater fraudes e usar o benefício como ponto de partida: quem recebe passa na frente em cursos e vagas de emprego, até não precisar mais dele.",
           "fontes": [
             {
               "tipo": "plano",
@@ -221,13 +221,13 @@
     },
     {
       "id": "impostos",
-      "area": "Economia",
+      "area": "Dinheiro e impostos",
       "tema": "Impostos",
       "pergunta": "O que fazer com os impostos?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Cobrar mais imposto de quem tem renda muito alta para reduzir o de quem ganha menos, e simplificar os impostos sobre o consumo em apenas dois tributos.",
+          "texto": "Cobrar mais imposto de quem é muito rico para cobrar menos de quem ganha pouco. E juntar os vários impostos das compras em apenas dois.",
           "fontes": [
             {
               "tipo": "plano",
@@ -248,7 +248,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Reduzir a carga de impostos sobre o consumo e a produção, com alíquota menor no imposto sobre o consumo e menos exceções para setores específicos.",
+          "texto": "Baixar os impostos embutidos no preço das compras e os que pesam sobre as empresas. E diminuir os descontos especiais dados a alguns setores.",
           "fontes": [
             {
               "tipo": "plano",
@@ -266,13 +266,13 @@
     },
     {
       "id": "contas-publicas",
-      "area": "Economia",
-      "tema": "Contas públicas",
-      "pergunta": "Como cuidar das contas do governo?",
+      "area": "Dinheiro e impostos",
+      "tema": "Gastos do governo",
+      "pergunta": "Como o governo deve cuidar do próprio dinheiro?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Limitar o crescimento das despesas sem cortar gastos sociais, e equilibrar as contas com crescimento econômico e corte de privilégios tributários.",
+          "texto": "Pôr um limite no aumento dos gastos, mas sem cortar os programas sociais. Fechar as contas com a economia crescendo e com o fim de privilégios em impostos.",
           "fontes": [
             {
               "tipo": "plano",
@@ -283,7 +283,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Adotar regras voltadas a reduzir a dívida pública, com as despesas cabendo no orçamento, corte de pelo menos 10 ministérios e de cargos comissionados.",
+          "texto": "Gastar só o que cabe no orçamento, para diminuir a dívida do país. Cortar pelo menos 10 ministérios e cargos de indicação política.",
           "fontes": [
             {
               "tipo": "plano",
@@ -301,13 +301,13 @@
     },
     {
       "id": "estatais",
-      "area": "Economia",
-      "tema": "Estatais e Petrobras",
-      "pergunta": "Qual deve ser o papel de estatais como a Petrobras?",
+      "area": "Dinheiro e impostos",
+      "tema": "Petrobras e empresas do governo",
+      "pergunta": "O que fazer com empresas do governo, como a Petrobras?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Usar as estatais para puxar investimentos e a política de preços da Petrobras para evitar que as altas internacionais cheguem inteiras ao preço dos combustíveis.",
+          "texto": "Usar essas empresas para investir no país. E usar a Petrobras para segurar o preço da gasolina, do diesel e do gás quando o petróleo sobe lá fora.",
           "fontes": [
             {
               "tipo": "plano",
@@ -318,7 +318,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Privatizar estatais, avaliando caso a caso, e escolher os dirigentes das que ficarem por critérios técnicos de mercado: o Estado regula, mas não atua como empresário.",
+          "texto": "Vender empresas do governo, olhando caso a caso. Nas que ficarem, escolher os chefes pela competência, como numa empresa privada. O governo fiscaliza, mas não é dono de negócio.",
           "fontes": [
             {
               "tipo": "plano",
@@ -336,13 +336,13 @@
     },
     {
       "id": "redes-sociais",
-      "area": "Liberdades e instituições",
+      "area": "Liberdade e Justiça",
       "tema": "Redes sociais",
-      "pergunta": "Como o governo deve lidar com as redes sociais?",
+      "pergunta": "O governo deve criar regras para as redes sociais?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Criar regras para redes sociais e plataformas digitais, para impedir que espalhem desinformação e campanhas de ódio.",
+          "texto": "Sim. Criar regras para as redes sociais e aplicativos, para impedir que espalhem mentiras e ataques de ódio.",
           "fontes": [
             {
               "tipo": "plano",
@@ -353,7 +353,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Impedir que órgãos do governo monitorem ou classifiquem como desinformação o que as pessoas dizem; crime cometido nas redes é assunto para a Justiça.",
+          "texto": "Não. O governo não deve vigiar nem classificar como mentira o que as pessoas dizem. Se alguém comete crime na internet, quem resolve é a Justiça.",
           "fontes": [
             {
               "tipo": "plano",
@@ -371,13 +371,13 @@
     },
     {
       "id": "stf",
-      "area": "Liberdades e instituições",
-      "tema": "Supremo Tribunal Federal",
-      "pergunta": "Que mudança é mais importante no STF?",
+      "area": "Liberdade e Justiça",
+      "tema": "Supremo (STF)",
+      "pergunta": "O que precisa mudar no Supremo Tribunal Federal, o STF?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Discutir mandato com prazo definido para os ministros e novos critérios de escolha, com regras para impedir que integrantes do Judiciário enriqueçam com o cargo.",
+          "texto": "Discutir um tempo certo para cada ministro ficar no cargo, em vez de ficar até se aposentar, e uma nova forma de escolher quem entra.",
           "fontes": [
             {
               "tipo": "imprensa",
@@ -390,7 +390,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Limitar as decisões tomadas por um único ministro e tirar do STF o julgamento criminal de parlamentares, que passaria a tribunais de instâncias inferiores.",
+          "texto": "Limitar as decisões tomadas por um ministro sozinho: o grupo decide junto. E deputados e senadores passam a ser julgados por outros tribunais.",
           "fontes": [
             {
               "tipo": "plano",
@@ -410,11 +410,11 @@
       "id": "educacao",
       "area": "Educação",
       "tema": "Escola pública",
-      "pergunta": "Onde investir primeiro para melhorar a escola pública?",
+      "pergunta": "Como melhorar a escola pública?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Expandir a escola em tempo integral na rede pública e pagar uma poupança a estudantes de baixa renda para que não abandonem o ensino médio.",
+          "texto": "Mais escolas em tempo integral, com o aluno o dia todo na escola. E uma poupança paga pelo governo para o jovem pobre não largar o ensino médio.",
           "fontes": [
             {
               "tipo": "plano",
@@ -430,7 +430,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Ampliar as escolas cívico-militares, atrelar o repasse de dinheiro a metas de aprendizagem e dar um vale para matrícula em outra escola onde faltar vaga pública.",
+          "texto": "Mais escolas cívico-militares, com militares cuidando da disciplina. Dinheiro para a escola conforme os alunos aprendem. E, se faltar vaga, o governo paga a matrícula em outra escola.",
           "fontes": [
             {
               "tipo": "plano",
@@ -448,13 +448,13 @@
     },
     {
       "id": "desmatamento",
-      "area": "Meio ambiente e campo",
-      "tema": "Desmatamento",
+      "area": "Campo e natureza",
+      "tema": "Florestas",
       "pergunta": "Qual deve ser a meta para o desmatamento?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Chegar ao desmatamento líquido zero até 2030: toda derrubada, mesmo a autorizada, precisa ser compensada com recuperação de floresta.",
+          "texto": "Até 2030, o país parar de perder floresta: toda área derrubada, mesmo com autorização, tem que ser compensada com floresta replantada.",
           "fontes": [
             {
               "tipo": "plano",
@@ -465,7 +465,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Zerar o desmatamento ilegal até 2029, concentrando a fiscalização em grilagem e crime ambiental, sem novas exigências para o produtor rural que cumpre a lei.",
+          "texto": "Até 2029, acabar com o desmatamento ilegal, indo atrás de quem invade terra pública e derruba floresta. Sem criar exigências novas para o produtor rural que cumpre a lei.",
           "fontes": [
             {
               "tipo": "plano",
@@ -483,13 +483,13 @@
     },
     {
       "id": "terra",
-      "area": "Meio ambiente e campo",
-      "tema": "Terra no campo",
-      "pergunta": "Qual deve ser a prioridade da política de terras?",
+      "area": "Campo e natureza",
+      "tema": "Terra para plantar",
+      "pergunta": "Como resolver a disputa por terra no campo?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Fazer reforma agrária, assentando as famílias que estão acampadas e ampliando o crédito para a compra de terra.",
+          "texto": "Fazer reforma agrária: dar terra para as famílias sem-terra que vivem em acampamentos e facilitar o empréstimo para comprar um pedaço de chão.",
           "fontes": [
             {
               "tipo": "plano",
@@ -500,7 +500,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Entregar títulos de propriedade a pequenos produtores em larga escala e garantir o direito de propriedade rural sem exceções.",
+          "texto": "Dar a escritura da terra para os pequenos produtores que vivem e plantam nela. E garantir que ninguém perca a propriedade que é sua.",
           "fontes": [
             {
               "tipo": "plano",
@@ -513,13 +513,13 @@
     },
     {
       "id": "terras-indigenas",
-      "area": "Meio ambiente e campo",
+      "area": "Campo e natureza",
       "tema": "Terras indígenas",
-      "pergunta": "O que priorizar nas terras indígenas?",
+      "pergunta": "O que fazer nas terras indígenas?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Demarcar terras indígenas e retirar invasores dessas áreas, para proteger os territórios, a cultura e o modo de vida desses povos.",
+          "texto": "Reconhecer oficialmente as terras indígenas e tirar quem invadiu, para proteger esses povos e seu modo de vida.",
           "fontes": [
             {
               "tipo": "plano",
@@ -530,7 +530,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Dar autonomia a indígenas e quilombolas para decidir sobre atividades econômicas dentro de suas terras, respeitando as regras ambientais.",
+          "texto": "Deixar indígenas e quilombolas decidirem se querem produzir e ter negócios dentro de suas terras, respeitando as leis de proteção da natureza.",
           "fontes": [
             {
               "tipo": "plano",
@@ -544,12 +544,12 @@
     {
       "id": "politica-externa",
       "area": "Brasil no mundo",
-      "tema": "Política externa",
-      "pergunta": "De quem o Brasil deve se aproximar no mundo?",
+      "tema": "Brasil e outros países",
+      "pergunta": "De que países o Brasil deve ficar mais perto?",
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Aproximar o Brasil dos BRICS e dos países do Sul Global, aprofundar o Mercosul e ter relações com todas as regiões, sem se alinhar a uma potência.",
+          "texto": "Ficar mais perto do grupo de países que inclui China, Índia, Rússia e África do Sul, e dos vizinhos da América do Sul. Conversar com todos, sem ficar do lado de nenhuma potência.",
           "fontes": [
             {
               "tipo": "plano",
@@ -560,7 +560,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Fortalecer a relação com Estados Unidos, Israel e Argentina, entrar na OCDE e abrir mais a economia ao comércio, negociando com todos os mercados.",
+          "texto": "Ficar mais perto de Estados Unidos, Israel e Argentina, entrar no grupo dos países mais desenvolvidos (a OCDE) e abrir mais o Brasil para o comércio com todos os países.",
           "fontes": [
             {
               "tipo": "plano",
@@ -571,6 +571,76 @@
               "tipo": "plano",
               "pagina": 63,
               "citacao": "O passo mais urgente é retomar o cronograma interrompido de adesão à OCDE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bets",
+      "area": "Família e proteção",
+      "tema": "Bets (apostas online)",
+      "pergunta": "O que fazer com as bets, os sites de aposta?",
+      "opcoes": [
+        {
+          "candidato": "lula",
+          "texto": "Controlar o gasto exagerado em apostas online e colocar mais profissionais de saúde para atender quem ficou viciado em jogo.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 49,
+              "citacao": "mantendo os mecanismos de controle de gastos excessivos em apostas on-line"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 39,
+              "citacao": "Ampliaremos os profissionais e as estratégias voltadas às pessoas com problemas relacionados a jogos de apostas."
+            }
+          ]
+        },
+        {
+          "candidato": "flavio",
+          "texto": "Proibir que o dinheiro do Bolsa Família e de outros auxílios seja usado em apostas. E fazer campanhas avisando do risco de se endividar com jogo.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 33,
+              "citacao": "Vamos proibir o uso dos recursos dos programas sociais para apostas, porque dinheiro destinado a pôr comida na mesa não pode escoar para a casa de apostas, e promover campanhas educativas e de conscientização sobre os riscos do endividamento com jogos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terras-raras",
+      "area": "Dinheiro e impostos",
+      "tema": "Minerais valiosos (terras raras)",
+      "pergunta": "O Brasil tem minerais raros e valiosos, usados em celular, bateria e carro elétrico: as “terras raras”. O que fazer com essa riqueza?",
+      "opcoes": [
+        {
+          "candidato": "lula",
+          "texto": "O governo monta um plano para esses minerais virarem produto aqui dentro, em vez de sair do país como pedra bruta. O Brasil fica no comando dessa riqueza.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 52,
+              "citacao": "Desenvolveremos uma política específica para minerais críticos e terras raras, capaz de organizar suas cadeias produtivas, diferenciar seus usos tecnológicos e evitar a simples exportação de matérias-primas estratégicas."
+            }
+          ]
+        },
+        {
+          "candidato": "flavio",
+          "texto": "Trazer empresas e tecnologia de fora para transformar esses minerais aqui dentro, com licença mais rápida para minerar. O governo fiscaliza, mas não vira dono do negócio.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 55,
+              "citacao": "O Estado atuará como regulador e coordenador, não como empresário"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 55,
+              "citacao": "Vamos trabalhar para atrair o capital estrangeiro e a tecnologia que já existem no mundo"
             }
           ]
         }

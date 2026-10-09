@@ -62,6 +62,12 @@ insert into public.contagem (rodada, candidato) values
   ('politica-externa', 'lula'),
   ('politica-externa', 'flavio'),
   ('politica-externa', 'nenhum'),
+  ('bets', 'lula'),
+  ('bets', 'flavio'),
+  ('bets', 'nenhum'),
+  ('terras-raras', 'lula'),
+  ('terras-raras', 'flavio'),
+  ('terras-raras', 'nenhum'),
   ('_concluidos', '-')
 on conflict do nothing;
 

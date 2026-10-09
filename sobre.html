@@ -4,13 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Como funciona · Teste cego das eleições 2026</title>
-  <meta name="theme-color" content="#5b3fd6">
+  <meta name="theme-color" content="#f6f1e7">
+  <script>
+    (function () {
+      var tema;
+      try { tema = localStorage.getItem('teste-cego:tema'); } catch (e) {}
+      if (tema !== 'dark' && tema !== 'light') tema = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = tema;
+    })();
+  </script>
   <link rel="icon" href="img/icone.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="topo">
+    <a class="marca" href="./">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="9" fill="#6d3bf5" stroke="currentColor" stroke-width="2.5"/><path d="M7 16c2.5-4 5.5-6 9-6s6.500 2 9 6c-2.500 4-5.500 6-9 6s-6.500-2-9-6z" fill="#fff"/><circle cx="16" cy="16" r="3" fill="#17132b"/><path d="M8 24 24 8" stroke="#ffb629" stroke-width="3.500" stroke-linecap="round"/></svg>
+      Teste cego
+    </a>
+    <button class="tema" type="button" aria-label="Mudar para o tema escuro">
+      <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.200"/><path d="M12 2.500v2.200M12 19.300v2.200M2.500 12h2.200M19.300 12h2.200M5.300 5.300l1.600 1.600M17.100 17.100l1.600 1.600M5.300 18.700l1.600-1.600M17.100 6.900l1.600-1.600"/></svg>
+      <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500z"/></svg>
+    </button>
+  </header>
   <main class="texto">
-    <p class="selo"><a href="./">← Voltar ao teste</a></p>
+    <p><a href="./">← Voltar ao teste</a></p>
     <h1>Como funciona</h1>
     <p>O Teste cego compara propostas dos dois candidatos do segundo turno da eleição presidencial de 2026, Lula e Flávio Bolsonaro. Em cada rodada você vê duas propostas sobre o mesmo tema, sem identificação, e escolhe a que prefere. A autoria só aparece no final.</p>
 
@@ -53,5 +71,6 @@
     <p>Projeto independente de Thiago Areias, sem vínculo com candidatos, partidos ou campanhas, sem financiamento e sem impulsionamento pago. O código e os dados são abertos no <a href="https://github.com/areiasthiago/teste-cego-eleitoral">GitHub</a>; correções são bem-vindas por lá.</p>
   </main>
   <footer class="rodape"><a href="./">Voltar ao teste</a></footer>
+  <script type="module" src="js/tema.js"></script>
 </body>
 </html>

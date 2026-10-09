@@ -67,10 +67,14 @@ function telaInicio() {
   mostrar(
     el('section', { class: 'tela inicio' },
       el('p', { class: 'selo' }, 'Eleições 2026 · 2º turno'),
-      el('h1', { tabindex: '-1' }, 'Teste cego'),
-      el('p', { class: 'chamada' }, 'Você lê duas propostas sobre o mesmo tema, sem saber de quem são, e escolhe a que mais combina com você.'),
-      el('p', {}, `São ${rodadas.length} rodadas, cerca de 4 minutos. No final, mostramos com qual candidato você mais concordou e de onde saiu cada proposta.`),
-      el('button', { class: 'botao principal', onclick: () => { estado.iniciado = true; salvar(); telaRodada(); } }, 'Começar'),
+      el('h1', { tabindex: '-1' }, 'Escolha a proposta ', el('span', { class: 'destaque' }, 'sem saber de quem é')),
+      el('p', { class: 'chamada' }, 'Lula ou Flávio Bolsonaro? Aqui você julga só as ideias. O nome aparece no final.'),
+      el('ol', { class: 'passos' },
+        el('li', {}, 'Leia duas propostas sobre o mesmo assunto'),
+        el('li', {}, 'Toque na que mais combina com você'),
+        el('li', {}, 'No final, veja de quem era cada uma')),
+      el('button', { class: 'botao principal', onclick: () => { estado.iniciado = true; salvar(); telaRodada(); } }, 'Começar o teste'),
+      el('p', {}, `São ${rodadas.length} perguntas. Leva uns 5 minutos.`),
       el('p', { class: 'aviso' },
         'Suas escolhas entram numa contagem anônima, sem identificar você. ',
         el('a', { href: 'sobre.html#privacidade' }, 'Saiba mais'), '.'),
@@ -91,23 +95,31 @@ function telaRodada() {
     telaRodada();
   };
 
-  const responder = (escolha) => {
+  // Mostra por um instante qual cartão foi tocado antes de trocar de pergunta.
+  const responder = (escolha, cartao) => {
+    if (app.querySelector('.travado')) return;
     estado.respostas[rodada.id] = { escolha, peso: peso.checked ? 2 : 1 };
     salvar();
-    telaRodada();
+    if (!cartao) return telaRodada();
+    cartao.classList.add('escolhido');
+    cartao.parentElement.classList.add('travado');
+    setTimeout(telaRodada, 260);
   };
 
   mostrar(
     el('section', { class: 'tela rodada' },
-      el('div', { class: 'progresso', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(rodadas.length), 'aria-valuenow': String(indice), 'aria-label': 'Progresso' },
-        el('span', { style: `width:${(100 * indice) / rodadas.length}%` })),
-      el('p', { class: 'selo' }, `${indice + 1} de ${rodadas.length} · ${rodada.tema}`),
+      el('div', { class: 'andamento' },
+        el('span', {}, `${indice + 1}/${rodadas.length}`),
+        el('div', { class: 'progresso', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(rodadas.length), 'aria-valuenow': String(indice), 'aria-label': 'Progresso' },
+          el('span', { style: `width:${(100 * (indice + 1)) / rodadas.length}%` }))),
+      el('p', { class: 'selo' }, rodada.tema),
       el('h2', { tabindex: '-1' }, rodada.pergunta),
       el('div', { class: 'cartoes' },
-        opcoes.map((opcao, i) => el('button', { class: 'cartao', onclick: () => responder(opcao.candidato) },
-          el('span', { class: 'letra', 'aria-hidden': 'true' }, 'AB'[i]),
-          el('span', { class: 'texto' }, opcao.texto)))),
-      el('label', { class: 'peso', for: 'peso' }, peso, ' Esse tema pesa muito pra mim (vale em dobro)'),
+        opcoes.map((opcao, i) => el('button', { class: `cartao ${'ab'[i]}`, onclick: (e) => responder(opcao.candidato, e.currentTarget) },
+          el('span', { class: 'letra' }, `Proposta ${'AB'[i]}`),
+          el('span', { class: 'texto' }, opcao.texto))),
+        el('span', { class: 'ou', 'aria-hidden': 'true' }, 'ou')),
+      el('label', { class: 'peso', for: 'peso' }, peso, 'Esse assunto é muito importante pra mim (vale em dobro)'),
       el('button', { class: 'botao discreto', onclick: () => responder(null) }, 'Nenhuma das duas / tanto faz'),
       indice > 0 && el('button', { class: 'botao voltar', onclick: voltar }, '← Voltar à pergunta anterior'),
     ),
@@ -182,6 +194,7 @@ function telaResultado() {
       res.pct && res.poucas && el('p', { class: 'aviso' }, `Você escolheu um lado em só ${res.respondidas} rodada${res.respondidas === 1 ? '' : 's'}; o percentual diz pouco.`),
       !res.pct && el('p', {}, 'Sem escolhas não há percentual, mas você pode ver abaixo de quem era cada proposta.'),
       placar,
+      res.pct && el('div', { class: 'barra', 'aria-hidden': 'true' }, lados.map((lado) => el('span', { style: `width:${lado.pct}%` }))),
       res.pct && el('p', { class: 'creditos' }, 'Ilustrações geradas por inteligência artificial.'),
       res.pct && el('button', { class: 'botao principal', onclick: () => compartilhar(lados) }, 'Compartilhar resultado'),
       el('p', { class: 'aviso' }, 'O percentual mede só as propostas deste teste, resumidas por nós. Não é pesquisa eleitoral nem recomendação de voto. ',

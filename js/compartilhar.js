@@ -24,7 +24,7 @@ function retrato(ctx, img, cx, cy, raio) {
   ctx.beginPath();
   ctx.arc(cx, cy, raio, 0, Math.PI * 2);
   ctx.lineWidth = 8;
-  ctx.strokeStyle = '#1d1b2e';
+  ctx.strokeStyle = '#17132b';
   ctx.stroke();
 }
 
@@ -34,16 +34,16 @@ export async function gerarImagem(lados) {
   canvas.width = L;
   canvas.height = A;
   const ctx = canvas.getContext('2d');
-  const fonte = (peso, tamanho) => `${peso} ${tamanho}px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
+  const fonte = (peso, tamanho) => `${peso} ${tamanho}px "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
 
-  ctx.fillStyle = '#f4f1ea';
+  ctx.fillStyle = '#f6f1e7';
   ctx.fillRect(0, 0, L, A);
   ctx.textAlign = 'center';
 
-  ctx.fillStyle = '#5b3fd6';
+  ctx.fillStyle = '#6d3bf5';
   ctx.font = fonte(700, 40);
   ctx.fillText('TESTE CEGO · ELEIÇÕES 2026', L / 2, 130);
-  ctx.fillStyle = '#1d1b2e';
+  ctx.fillStyle = '#17132b';
   ctx.font = fonte(800, 68);
   ctx.fillText('Escolhi propostas sem', L / 2, 240);
   ctx.fillText('saber de quem eram', L / 2, 322);
@@ -52,17 +52,17 @@ export async function gerarImagem(lados) {
   lados.forEach((lado, i) => {
     const cx = i === 0 ? 290 : L - 290;
     retrato(ctx, imagens[i], cx, 620, 200);
-    ctx.fillStyle = '#1d1b2e';
+    ctx.fillStyle = '#17132b';
     ctx.font = fonte(800, 150);
     ctx.fillText(`${lado.pct}%`, cx, 1000);
     ctx.font = fonte(600, 46);
     ctx.fillText(lado.nome, cx, 1070);
   });
 
-  ctx.fillStyle = '#5b3fd6';
+  ctx.fillStyle = '#6d3bf5';
   ctx.font = fonte(700, 44);
   ctx.fillText(`Faça o seu: ${SITE}`, L / 2, 1215);
-  ctx.fillStyle = '#6b6880';
+  ctx.fillStyle = '#5d5873';
   ctx.font = fonte(400, 28);
   ctx.fillText('Ilustrações geradas por inteligência artificial · Não é pesquisa eleitoral', L / 2, 1285);
 
