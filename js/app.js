@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=0.16';
-import { registrar } from './contagem.js?v=0.16';
-import { compartilhar } from './compartilhar.js?v=0.16';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.16';
+import { calcular } from './pontuacao.js?v=0.17';
+import { registrar } from './contagem.js?v=0.17';
+import { compartilhar } from './compartilhar.js?v=0.17';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.17';
 
 const CHAVE = 'teste-cego:v1';
 const app = document.getElementById('app');
@@ -242,7 +242,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=0.16')).json();
+  dados = await (await fetch('data/rodadas.json?v=0.17')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.
