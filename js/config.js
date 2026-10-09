@@ -1,6 +1,6 @@
-// Endereço curto (bit.ly) que aparece na imagem e no texto de compartilhamento.
-// Redireciona para areiasthiago.github.io/teste-cego-eleitoral.
-export const SITE = 'bit.ly/teste-cego';
+// Endereço que aparece na imagem e no texto de compartilhamento. É o endereço direto do site,
+// sem encurtador: o bit.ly mostrava uma página intermediária antes de redirecionar.
+export const SITE = 'areiasthiago.github.io/teste-cego-eleitoral';
 
 // Contagem anônima agregada (Supabase). Enquanto estiver vazio, nada é enviado.
 // A chave publicável é pública por natureza: só consegue chamar a função registrar().

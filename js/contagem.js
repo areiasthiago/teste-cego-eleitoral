@@ -1,4 +1,4 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.0';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.1';
 
 // Envia só pares (rodada, lado escolhido). Sem identificador, sem percentual
 // individual. Falhar aqui nunca pode atrapalhar o quiz.
