@@ -415,7 +415,7 @@
         },
         {
           "candidato": "flavio",
-          "texto": "Limitar as decisões tomadas por um ministro sozinho: o grupo de ministros decide junto. E deputados e senadores passam a ser julgados por outros tribunais, não mais pelo STF.",
+          "texto": "Limitar as decisões tomadas por um ministro sozinho e tirar do STF o julgamento de deputados e senadores. E, apesar de não constar no plano oficial, o candidato defende o impeachment de ministro do STF pelo Senado.",
           "fontes": [
             {
               "tipo": "plano",
@@ -426,6 +426,20 @@
               "tipo": "plano",
               "pagina": 65,
               "citacao": "Fim das competências criminais originárias do STF, permitindo que parlamentares sejam julgados por instâncias inferiores"
+            },
+            {
+              "tipo": "imprensa",
+              "veiculo": "Congresso em Foco",
+              "data": "2026-09-01",
+              "url": "https://www.congressoemfoco.com.br/noticia/121872/flavio-cobra-impeachment-de-moraes-por-conversas-com-daniel-vorcaro",
+              "citacao": "Alexandre de Moraes precisa ter o processo de impeachment imediatamente iniciado."
+            },
+            {
+              "tipo": "imprensa",
+              "veiculo": "Poder360",
+              "data": "2026-10-08",
+              "url": "https://poder360.com.br/poder-congresso/flavio-reage-a-ordem-de-moraes-para-eduardo-cumprir-pena",
+              "citacao": "Não por acaso, chegamos a quase 50 senadores que declaradamente são a favor do impeachment de ministro"
             }
           ]
         }

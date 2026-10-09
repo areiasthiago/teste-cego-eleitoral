@@ -53,7 +53,11 @@ for (const r of rodadas) {
     if (!o.fontes?.length) erros.push(`${quem}: sem fonte`);
     // Posição que vem de declaração, e não do plano, tem de avisar isso no próprio cartão.
     const foraDoPlano = o.fontes?.[0]?.tipo === 'imprensa';
-    if (foraDoPlano !== o.texto.includes(AVISO_FORA_DO_PLANO)) erros.push(`${quem}: aviso "${AVISO_FORA_DO_PLANO}" ${foraDoPlano ? 'faltando' : 'sobrando'}`);
+    const temAviso = o.texto.toLowerCase().includes(AVISO_FORA_DO_PLANO.toLowerCase());
+    const temImprensa = o.fontes?.some((f) => f.tipo === 'imprensa');
+    if (foraDoPlano && !temAviso) erros.push(`${quem}: aviso "${AVISO_FORA_DO_PLANO}" faltando`);
+    if (temAviso && !temImprensa) erros.push(`${quem}: aviso "${AVISO_FORA_DO_PLANO}" sem fonte de imprensa`);
+    if (temImprensa && !temAviso) erros.push(`${quem}: tem fonte de imprensa mas não avisa o que está fora do plano`);
     if (o.contexto) {
       if (!o.contexto.texto || !o.contexto.links?.length) erros.push(`${quem}: contexto sem texto ou sem link`);
       for (const l of o.contexto.links ?? []) {
