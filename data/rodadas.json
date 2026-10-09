@@ -579,12 +579,17 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Ficar mais perto do grupo de países que inclui China, Índia, Rússia e África do Sul, e dos vizinhos da América do Sul. Conversar com todos, sem ficar do lado de nenhuma potência.",
+          "texto": "Ficar mais perto do grupo de países que inclui China, Índia, Rússia e África do Sul, e dos vizinhos da América do Sul. Conversar com todos, sem se submeter a nenhuma potência.",
           "fontes": [
             {
               "tipo": "plano",
               "pagina": 81,
               "citacao": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 80,
+              "citacao": "Manteremos o empenho na construção de uma ordem mundial mais justa e equilibrada, livre da lógica da submissão, das imposições unilaterais e dos esquemas obsoletos de uma nova Guerra Fria."
             }
           ]
         },
