@@ -11,3 +11,7 @@ export const CONTAGEM = {
 // Só para a fase de testes: recarregar a página recomeça o quiz.
 // Antes de divulgar, voltar para false (o resultado passa a ficar salvo no aparelho).
 export const REINICIAR_AO_RECARREGAR = true;
+
+// Só para a fase de testes: false não envia nada para a contagem.
+// Antes de divulgar, voltar para true.
+export const ENVIAR_CONTAGEM = false;
