@@ -189,7 +189,20 @@
               "pagina": 75,
               "citacao": "que normatize de forma adequada a atividade empresarial e estabeleça as regras para definir a relação de trabalho, a remuneração, condições de trabalho, proteções e direitos laborais e previdenciários, transparência algorítmica."
             }
-          ]
+          ],
+          "contexto": {
+            "texto": "Em março de 2026, ministros do governo dele propuseram que os aplicativos paguem no mínimo R$ 10 por corrida ou entrega, mais R$ 2,50 por quilômetro rodado. O valor não está no plano de governo, e a votação do projeto no Congresso ficou para 2027.",
+            "links": [
+              {
+                "rotulo": "Correio Braziliense, 10/03/2026 (a proposta)",
+                "url": "https://www.correiobraziliense.com.br/politica/2026/03/7372103-governo-cobra-regras-para-apps-e-defende-taxa-minima-de-rs-10-para-entregadores.html"
+              },
+              {
+                "rotulo": "CNN Brasil, 15/04/2026 (o adiamento)",
+                "url": "https://www.cnnbrasil.com.br/blogs/isabel-mega/politica/governo-e-camara-acertam-deixar-regulacao-de-trabalho-por-apps-para-2027/"
+              }
+            ]
+          }
         },
         {
           "candidato": "flavio",
