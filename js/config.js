@@ -2,8 +2,8 @@
 export const SITE = 'areiasthiago.github.io/teste-cego-eleitoral';
 
 // Contagem anônima agregada (Supabase). Enquanto estiver vazio, nada é enviado.
-// A chave "anon" é pública por natureza: só consegue chamar a função registrar().
+// A chave publicável é pública por natureza: só consegue chamar a função registrar().
 export const CONTAGEM = {
-  url: '',
-  chave: '',
+  url: 'https://pkymzjedzhfmgyuwhmdi.supabase.co',
+  chave: 'sb_publishable_WHaRKW6IwIHCMQcjKZaqAw_dhQ7-jst',
 };
