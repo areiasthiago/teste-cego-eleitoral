@@ -7,3 +7,7 @@ export const CONTAGEM = {
   url: 'https://pkymzjedzhfmgyuwhmdi.supabase.co',
   chave: 'sb_publishable_WHaRKW6IwIHCMQcjKZaqAw_dhQ7-jst',
 };
+
+// Só para a fase de testes: recarregar a página recomeça o quiz.
+// Antes de divulgar, voltar para false (o resultado passa a ficar salvo no aparelho).
+export const REINICIAR_AO_RECARREGAR = true;
