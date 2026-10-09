@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=0.48';
-import { registrar } from './contagem.js?v=0.48';
-import { compartilhar } from './compartilhar.js?v=0.48';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.48';
+import { calcular } from './pontuacao.js?v=0.49';
+import { registrar } from './contagem.js?v=0.49';
+import { compartilhar } from './compartilhar.js?v=0.49';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.49';
 
 const CHAVE = 'teste-cego:v1';
 const app = document.getElementById('app');
@@ -85,8 +85,8 @@ function telaInicio() {
   mostrar(
     el('section', { class: 'tela inicio' },
       el('p', { class: 'selo' }, 'Eleições 2026 · 2º turno'),
-      el('h1', { tabindex: '-1' }, 'Escolha a proposta ', el('span', { class: 'destaque' }, 'sem saber de quem é')),
-      el('p', { class: 'chamada' }, 'Lula ou Flávio Bolsonaro? Aqui você julga só as ideias. O nome aparece no final.'),
+      el('h1', { tabindex: '-1' }, 'Indeciso? Escolha a proposta ', el('span', { class: 'destaque' }, 'sem saber de quem é')),
+      el('p', { class: 'chamada' }, 'Lula ou Flávio Bolsonaro? Aqui você compara só as ideias, sem nome, partido nem torcida. O teste não diz em quem votar: mostra com quem você mais concorda.'),
       el('ol', { class: 'passos trilho' },
         el('li', {}, 'Leia duas propostas sobre o mesmo assunto'),
         el('li', {}, 'Toque na que mais combina com você'),
@@ -242,7 +242,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=0.48')).json();
+  dados = await (await fetch('data/rodadas.json?v=0.49')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.

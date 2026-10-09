@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=0.48';
+import { SITE } from './config.js?v=0.49';
 
 // Formato de story (9:16), com respiro em cima e embaixo para a interface do aplicativo.
 const L = 1080;
@@ -140,7 +140,7 @@ export async function gerarImagem(lados) {
   bloco(ctx, 50, 1480, L - 114, 124, 44, COR.roxo, 14);
   ctx.fillStyle = '#ffffff';
   ctx.font = fonte(800, 58);
-  ctx.fillText('Faça o seu teste', (50 + L - 64) / 2, 1562);
+  ctx.fillText('Indeciso? Faça o seu teste', (50 + L - 64) / 2, 1562);
   ctx.fillStyle = COR.tinta;
   textoAjustado(ctx, SITE, L / 2, 1700, 700, 46, L - 120);
   ctx.fillStyle = COR.suave;
@@ -153,7 +153,7 @@ export async function gerarImagem(lados) {
 export async function compartilhar(lados) {
   const blob = await gerarImagem(lados);
   const arquivo = new File([blob], 'teste-cego.png', { type: 'image/png' });
-  const texto = `Fiz o Teste Cego das eleições: escolhi propostas sem saber de quem eram. Faça o seu: https://${SITE}`;
+  const texto = `Fiz o Teste Cego das eleições: escolhi propostas sem saber de quem eram. Se você ainda está indeciso, faça o seu: https://${SITE}`;
 
   if (navigator.canShare?.({ files: [arquivo] })) {
     try {
