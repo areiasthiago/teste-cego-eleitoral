@@ -1,6 +1,5 @@
-// Endereço que aparece na imagem e no texto de compartilhamento. É o endereço direto do site,
-// sem encurtador: o bit.ly mostrava uma página intermediária antes de redirecionar.
-export const SITE = 'areiasthiago.github.io/teste-cego-eleitoral';
+// Endereço que aparece na imagem e no texto de compartilhamento: o domínio próprio do site.
+export const SITE = 'testecego.online';
 
 // Contagem anônima agregada (Supabase). Enquanto estiver vazio, nada é enviado.
 // A chave publicável é pública por natureza: só consegue chamar a função registrar().
