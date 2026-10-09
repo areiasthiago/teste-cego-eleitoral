@@ -1,7 +1,13 @@
 {
   "candidatos": {
-    "lula": { "nome": "Lula", "plano": "refs/32ce89_programa_governo_lula_2026.pdf" },
-    "flavio": { "nome": "Flávio Bolsonaro", "plano": "refs/FLAVIO-BOLSONARO-PARA-O-BRASIL-VENCER-O-ATRASO-1-1.pdf" }
+    "lula": {
+      "nome": "Lula",
+      "plano": "refs/32ce89_programa_governo_lula_2026.pdf"
+    },
+    "flavio": {
+      "nome": "Flávio Bolsonaro",
+      "plano": "refs/FLAVIO-BOLSONARO-PARA-O-BRASIL-VENCER-O-ATRASO-1-1.pdf"
+    }
   },
   "rodadas": [
     {
@@ -14,14 +20,22 @@
           "candidato": "lula",
           "texto": "Sufocar o dinheiro das facções e milícias com investigação e inteligência integradas entre União, estados e municípios, somando prevenção e mais presença do Estado em favelas e periferias.",
           "fontes": [
-            { "tipo": "plano", "pagina": 27, "citacao": "O crime organizado deve ser enfrentado com firmeza, nos marcos da Constituição e do Estado Democrático de Direito, por meio da desarticulação de suas estruturas econômicas e financeiras." }
+            {
+              "tipo": "plano",
+              "pagina": 27,
+              "citacao": "O crime organizado deve ser enfrentado com firmeza, nos marcos da Constituição e do Estado Democrático de Direito, por meio da desarticulação de suas estruturas econômicas e financeiras."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Classificar facções e milícias como organizações terroristas e combatê-las com força policial e militar, incluindo uma tropa de elite das Forças Armadas nas fronteiras e confronto direto com criminosos armados.",
           "fontes": [
-            { "tipo": "plano", "pagina": 13, "citacao": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas." }
+            {
+              "tipo": "plano",
+              "pagina": 13,
+              "citacao": "PCC, CV, milícias e todas as outras facções serão declaradas como organizações narcoterroristas."
+            }
           ]
         }
       ]
@@ -36,15 +50,27 @@
           "candidato": "lula",
           "texto": "Reforçar os presídios federais para isolar chefes do crime e padronizar a gestão das penitenciárias estaduais, com foco em reduzir a reincidência e garantir direitos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 28, "citacao": "A gestão do sistema prisional é estratégica para o enfrentamento ao crime organizado, a redução da reincidência e a garantia de direitos." }
+            {
+              "tipo": "plano",
+              "pagina": 28,
+              "citacao": "A gestão do sistema prisional é estratégica para o enfrentamento ao crime organizado, a redução da reincidência e a garantia de direitos."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Construir 5 presídios de segurança máxima, abrir 500 mil vagas em quatro anos e acabar com a progressão de regime para crimes hediondos, com cumprimento integral da pena.",
           "fontes": [
-            { "tipo": "plano", "pagina": 14, "citacao": "O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador." },
-            { "tipo": "plano", "pagina": 15, "citacao": "o novo Governo do Brasil vai usar toda a sua força para acabar com a progressão de regime de quem comete crimes hediondos" }
+            {
+              "tipo": "plano",
+              "pagina": 14,
+              "citacao": "O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 15,
+              "citacao": "o novo Governo do Brasil vai usar toda a sua força para acabar com a progressão de regime de quem comete crimes hediondos"
+            }
           ]
         }
       ]
@@ -59,15 +85,29 @@
           "candidato": "lula",
           "texto": "Sim: acabar com a escala 6x1 por lei e reduzir a jornada para 40 horas semanais, sem redução de salário, valendo para todos os trabalhadores.",
           "fontes": [
-            { "tipo": "plano", "pagina": 75, "citacao": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados." }
+            {
+              "tipo": "plano",
+              "pagina": 75,
+              "citacao": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Não por lei: em vez de proibir a 6x1, deixar cada trabalhador combinar a própria carga horária direto com a empresa, trabalhando mais ou menos conforme escolher.",
           "fontes": [
-            { "tipo": "imprensa", "veiculo": "Congresso em Foco", "data": "2026-10-06", "url": "https://www.congressoemfoco.com.br/noticia/123034/flavio-defende-trabalho-por-hora-como-alternativa-ao-fim-da-escala-6x1", "citacao": "Tenho proposta infinitamente melhor do que essa que está na mesa. [...] Liberdade do trabalhador de escolher sua própria carga horária." },
-            { "tipo": "plano", "pagina": 44, "citacao": "Por isso defendemos o negociado sobre o legislado, ou seja, permitir que trabalhador e empresa combinem diretamente as condições de trabalho que funcionam para os dois, dentro da lei, em vez de seguir uma regra única imposta a todos." }
+            {
+              "tipo": "imprensa",
+              "veiculo": "Congresso em Foco",
+              "data": "2026-10-06",
+              "url": "https://www.congressoemfoco.com.br/noticia/123034/flavio-defende-trabalho-por-hora-como-alternativa-ao-fim-da-escala-6x1",
+              "citacao": "Tenho proposta infinitamente melhor do que essa que está na mesa. [...] Liberdade do trabalhador de escolher sua própria carga horária."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 44,
+              "citacao": "Por isso defendemos o negociado sobre o legislado, ou seja, permitir que trabalhador e empresa combinem diretamente as condições de trabalho que funcionam para os dois, dentro da lei, em vez de seguir uma regra única imposta a todos."
+            }
           ]
         }
       ]
@@ -80,16 +120,26 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Manter a regra que reajusta o salário mínimo acima da inflação todos os anos, como forma de distribuir renda.",
+          "texto": "Reajustar o salário mínimo acima da inflação todos os anos, como forma de distribuir renda e combater a pobreza.",
           "fontes": [
-            { "tipo": "plano", "pagina": 74, "citacao": "o novo mandato de Lula dará continuidade à política de valorização do salário mínimo como meio estratégico de distribuição de renda, combate à pobreza e promoção do desenvolvimento econômico e social." }
+            {
+              "tipo": "plano",
+              "pagina": 74,
+              "citacao": "o novo mandato de Lula dará continuidade à política de valorização do salário mínimo como meio estratégico de distribuição de renda, combate à pobreza e promoção do desenvolvimento econômico e social."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Não cortar o salário mínimo nem as aposentadorias, e aumentar o poder de compra por outro caminho: corte de gastos do governo e redução de impostos.",
+          "texto": "Garantir que salário mínimo e aposentadorias não sofram cortes, e aumentar o poder de compra por outro caminho: menos gastos do governo e menos impostos.",
           "fontes": [
-            { "tipo": "imprensa", "veiculo": "SBT News", "data": "2026-08-29", "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-bolsonaro-promete-preservar-valor-do-salario-minimo", "citacao": "Eu não farei economia com quem ganha salário mínimo, não farei economia com aposentados. Eu vou fazer economia cortando corrupção, fazendo um 'tesouraço' na burocracia e reduzindo os impostos." }
+            {
+              "tipo": "imprensa",
+              "veiculo": "SBT News",
+              "data": "2026-08-29",
+              "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-bolsonaro-promete-preservar-valor-do-salario-minimo",
+              "citacao": "Eu não farei economia com quem ganha salário mínimo, não farei economia com aposentados. Eu vou fazer economia cortando corrupção, fazendo um 'tesouraço' na burocracia e reduzindo os impostos."
+            }
           ]
         }
       ]
@@ -104,16 +154,32 @@
           "candidato": "lula",
           "texto": "Mudar regras trabalhistas que tornam o emprego precário, coibir fraudes em terceirizações e fortalecer a negociação coletiva feita pelos sindicatos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 75, "citacao": "Vamos aprimorar a legislação trabalhista, alterando regras que induzem a precarização das condições de trabalho, os marcos regressivos contidos na legislação, as fraudes presentes em muitas terceirizações" },
-            { "tipo": "plano", "pagina": 76, "citacao": "Reafirmamos nosso compromisso com o fortalecimento da negociação coletiva e com a atualização do sistema sindical de representação coletiva de interesse." }
+            {
+              "tipo": "plano",
+              "pagina": 75,
+              "citacao": "Vamos aprimorar a legislação trabalhista, alterando regras que induzem a precarização das condições de trabalho, os marcos regressivos contidos na legislação, as fraudes presentes em muitas terceirizações"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 76,
+              "citacao": "Reafirmamos nosso compromisso com o fortalecimento da negociação coletiva e com a atualização do sistema sindical de representação coletiva de interesse."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Baratear a contratação com carteira assinada reduzindo encargos, criar contratos especiais para jovens e maiores de 50 anos e diminuir o poder dos sindicatos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 43, "citacao": "Vamos reduzir gradualmente o custo do trabalho, sem retirar direitos, para que mais brasileiros tenham carteira assinada e a proteção que vem com ela." },
-            { "tipo": "plano", "pagina": 44, "citacao": "O país precisa se posicionar contra a República Sindical, em que os interesses de dirigentes das entidades se sobrepõem ao interesse dos trabalhadores." }
+            {
+              "tipo": "plano",
+              "pagina": 43,
+              "citacao": "Vamos reduzir gradualmente o custo do trabalho, sem retirar direitos, para que mais brasileiros tenham carteira assinada e a proteção que vem com ela."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 44,
+              "citacao": "O país precisa se posicionar contra a República Sindical, em que os interesses de dirigentes das entidades se sobrepõem ao interesse dos trabalhadores."
+            }
           ]
         }
       ]
@@ -126,17 +192,29 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Manter e ampliar os programas de transferência de renda para quem mais precisa, como parte permanente da rede de proteção social do país.",
+          "texto": "Ampliar os programas de transferência de renda para quem mais precisa e tratá-los como parte permanente da rede de proteção social, junto com saúde, educação e inclusão produtiva.",
           "fontes": [
-            { "tipo": "plano", "pagina": 18, "citacao": "devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita." }
+            {
+              "tipo": "plano",
+              "pagina": 18,
+              "citacao": "devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Manter os programas atuais combatendo fraudes e tratá-los como ponto de partida: quem recebe tem prioridade em qualificação e emprego, com a meta de não precisar mais do benefício.",
+          "texto": "Garantir os programas de transferência de renda, combater fraudes e tratá-los como ponto de partida: quem recebe tem prioridade em qualificação e emprego, até não precisar mais do benefício.",
           "fontes": [
-            { "tipo": "plano", "pagina": 42, "citacao": "vamos manter os programas sociais existentes, com aperfeiçoamento da gestão, correção de distorções e combate às fraudes." },
-            { "tipo": "plano", "pagina": 43, "citacao": "o beneficiário de programa social terá prioridade em todas as ações do Estado voltadas ao trabalho" }
+            {
+              "tipo": "plano",
+              "pagina": 42,
+              "citacao": "vamos manter os programas sociais existentes, com aperfeiçoamento da gestão, correção de distorções e combate às fraudes."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 43,
+              "citacao": "o beneficiário de programa social terá prioridade em todas as ações do Estado voltadas ao trabalho"
+            }
           ]
         }
       ]
@@ -149,17 +227,39 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Manter a reforma tributária já aprovada e seguir cobrando mais imposto de quem tem renda muito alta para aliviar quem ganha menos.",
+          "texto": "Cobrar mais imposto de quem tem renda muito alta para reduzir o de quem ganha menos, e simplificar os impostos sobre o consumo em apenas dois tributos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 18, "citacao": "O combate às desigualdades requer justiça tributária" },
-            { "tipo": "plano", "pagina": 11, "citacao": "cerca de 140 mil contribuintes do topo da pirâmide social passaram a contribuir mais, viabilizando alívio tributário para mais de 15 milhões de brasileiros e brasileiras." }
+            {
+              "tipo": "plano",
+              "pagina": 18,
+              "citacao": "O combate às desigualdades requer justiça tributária"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 11,
+              "citacao": "cerca de 140 mil contribuintes do topo da pirâmide social passaram a contribuir mais, viabilizando alívio tributário para mais de 15 milhões de brasileiros e brasileiras."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 11,
+              "citacao": "O número de impostos cairá de cinco (PIS, Cofins, IPI, ICMS e ISS) para dois (CBS federal e IBS subnacional)."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Rever a reforma tributária e os aumentos de impostos recentes para reduzir a carga sobre o consumo e a produção, baixando a alíquota do novo imposto sobre consumo.",
+          "texto": "Reduzir a carga de impostos sobre o consumo e a produção, com alíquota menor no imposto sobre o consumo e menos exceções para setores específicos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 30, "citacao": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso e da majoração de impostos efetuada pelo atual governo, com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo." }
+            {
+              "tipo": "plano",
+              "pagina": 30,
+              "citacao": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso e da majoração de impostos efetuada pelo atual governo, com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 30,
+              "citacao": "Vamos corrigir suas distorções, reduzir o IVA, hoje projetado num dos patamares mais altos do mundo"
+            }
           ]
         }
       ]
@@ -172,17 +272,29 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Manter a regra fiscal atual, que limita o crescimento das despesas preservando os gastos sociais, e equilibrar as contas com crescimento econômico e corte de privilégios tributários.",
+          "texto": "Limitar o crescimento das despesas sem cortar gastos sociais, e equilibrar as contas com crescimento econômico e corte de privilégios tributários.",
           "fontes": [
-            { "tipo": "plano", "pagina": 49, "citacao": "manteremos o novo arcabouço fiscal, que controlou o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário." }
+            {
+              "tipo": "plano",
+              "pagina": 49,
+              "citacao": "manteremos o novo arcabouço fiscal, que controlou o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Trocar a regra fiscal atual por outra voltada a reduzir a dívida pública, com as despesas cabendo no orçamento, corte de pelo menos 10 ministérios e de cargos comissionados.",
+          "texto": "Adotar regras voltadas a reduzir a dívida pública, com as despesas cabendo no orçamento, corte de pelo menos 10 ministérios e de cargos comissionados.",
           "fontes": [
-            { "tipo": "plano", "pagina": 71, "citacao": "Apresentaremos uma reformulação nas atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública conforme determina a Constituição." },
-            { "tipo": "plano", "pagina": 69, "citacao": "Isso inclui o corte de no mínimo 10 ministérios, a redução de cargos comissionados e de despesas administrativas" }
+            {
+              "tipo": "plano",
+              "pagina": 71,
+              "citacao": "Apresentaremos uma reformulação nas atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública conforme determina a Constituição."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 69,
+              "citacao": "Isso inclui o corte de no mínimo 10 ministérios, a redução de cargos comissionados e de despesas administrativas"
+            }
           ]
         }
       ]
@@ -197,15 +309,27 @@
           "candidato": "lula",
           "texto": "Usar as estatais para puxar investimentos e a política de preços da Petrobras para evitar que as altas internacionais cheguem inteiras ao preço dos combustíveis.",
           "fontes": [
-            { "tipo": "plano", "pagina": 66, "citacao": "Continuaremos a atuar para mitigar a volatilidade dos preços internacionais, garantindo que os brasileiros não fiquem expostos a choques externos." }
+            {
+              "tipo": "plano",
+              "pagina": 66,
+              "citacao": "Continuaremos a atuar para mitigar a volatilidade dos preços internacionais, garantindo que os brasileiros não fiquem expostos a choques externos."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Retomar as privatizações, avaliando caso a caso, e escolher dirigentes de estatais por critérios técnicos de mercado: o Estado regula, mas não atua como empresário.",
+          "texto": "Privatizar estatais, avaliando caso a caso, e escolher os dirigentes das que ficarem por critérios técnicos de mercado: o Estado regula, mas não atua como empresário.",
           "fontes": [
-            { "tipo": "plano", "pagina": 70, "citacao": "vamos retomar o Programa Nacional de Desestatização com critério, avaliando caso a caso onde a presença do Estado deixou de fazer sentido." },
-            { "tipo": "plano", "pagina": 49, "citacao": "O papel do Estado aqui não é ser o empresário, é ser o país que funciona" }
+            {
+              "tipo": "plano",
+              "pagina": 70,
+              "citacao": "vamos retomar o Programa Nacional de Desestatização com critério, avaliando caso a caso onde a presença do Estado deixou de fazer sentido."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 49,
+              "citacao": "O papel do Estado aqui não é ser o empresário, é ser o país que funciona"
+            }
           ]
         }
       ]
@@ -220,15 +344,27 @@
           "candidato": "lula",
           "texto": "Criar regras para redes sociais e plataformas digitais, para impedir que espalhem desinformação e campanhas de ódio.",
           "fontes": [
-            { "tipo": "plano", "pagina": 16, "citacao": "avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais, de modo a impedir que elas difundam desinformação, acolham campanhas de ódio e outras formas de comunicação nocivas para a democracia." }
+            {
+              "tipo": "plano",
+              "pagina": 16,
+              "citacao": "avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais, de modo a impedir que elas difundam desinformação, acolham campanhas de ódio e outras formas de comunicação nocivas para a democracia."
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Acabar com órgãos do governo que monitoram ou classificam como desinformação o que as pessoas dizem; crime cometido nas redes é assunto para a Justiça.",
+          "texto": "Impedir que órgãos do governo monitorem ou classifiquem como desinformação o que as pessoas dizem; crime cometido nas redes é assunto para a Justiça.",
           "fontes": [
-            { "tipo": "plano", "pagina": 66, "citacao": "Vamos fazer um Tesouraço da Censura: acabar com qualquer estrutura estatal que funcione como um" },
-            { "tipo": "plano", "pagina": 67, "citacao": "Crime se combate na Justiça, com regras claras e direito de defesa. O que o governo não pode fazer é transformar a crítica em delito." }
+            {
+              "tipo": "plano",
+              "pagina": 66,
+              "citacao": "Vamos fazer um Tesouraço da Censura: acabar com qualquer estrutura estatal que funcione como um"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 67,
+              "citacao": "Crime se combate na Justiça, com regras claras e direito de defesa. O que o governo não pode fazer é transformar a crítica em delito."
+            }
           ]
         }
       ]
@@ -243,15 +379,29 @@
           "candidato": "lula",
           "texto": "Discutir mandato com prazo definido para os ministros e novos critérios de escolha, com regras para impedir que integrantes do Judiciário enriqueçam com o cargo.",
           "fontes": [
-            { "tipo": "imprensa", "veiculo": "Diário do Nordeste (Estadão Conteúdo)", "data": "2026-09-15", "url": "https://diariodonordeste.verdesmares.com.br/pontopoder/lula-defende-tempo-de-mandato-e-novos-criterios-para-escolhas-de-ministros-do-stf-1.3791812", "citacao": "Acho que temos que ter uma reforma profunda no Poder Judiciário [...] em que a gente discuta o tempo de mandato, o critério de escolher o candidato" }
+            {
+              "tipo": "imprensa",
+              "veiculo": "Diário do Nordeste (Estadão Conteúdo)",
+              "data": "2026-09-15",
+              "url": "https://diariodonordeste.verdesmares.com.br/pontopoder/lula-defende-tempo-de-mandato-e-novos-criterios-para-escolhas-de-ministros-do-stf-1.3791812",
+              "citacao": "Acho que temos que ter uma reforma profunda no Poder Judiciário [...] em que a gente discuta o tempo de mandato, o critério de escolher o candidato"
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Limitar as decisões tomadas por um único ministro e tirar do STF o julgamento criminal de parlamentares, que passaria a tribunais de instâncias inferiores.",
           "fontes": [
-            { "tipo": "plano", "pagina": 65, "citacao": "Limitação das decisões monocráticas do STF, privilegiando as decisões colegiadas e presumindo a constitucionalidade do processo legislativo" },
-            { "tipo": "plano", "pagina": 65, "citacao": "Fim das competências criminais originárias do STF, permitindo que parlamentares sejam julgados por instâncias inferiores" }
+            {
+              "tipo": "plano",
+              "pagina": 65,
+              "citacao": "Limitação das decisões monocráticas do STF, privilegiando as decisões colegiadas e presumindo a constitucionalidade do processo legislativo"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 65,
+              "citacao": "Fim das competências criminais originárias do STF, permitindo que parlamentares sejam julgados por instâncias inferiores"
+            }
           ]
         }
       ]
@@ -266,16 +416,32 @@
           "candidato": "lula",
           "texto": "Expandir a escola em tempo integral na rede pública e pagar uma poupança a estudantes de baixa renda para que não abandonem o ensino médio.",
           "fontes": [
-            { "tipo": "plano", "pagina": 31, "citacao": "O fomento à expansão da educação em tempo integral terá absoluta prioridade no novo mandato." },
-            { "tipo": "plano", "pagina": 32, "citacao": "Nenhum jovem em situação de pobreza ou vulnerabilidade social no Brasil deve deixar a escola por falta de renda." }
+            {
+              "tipo": "plano",
+              "pagina": 31,
+              "citacao": "O fomento à expansão da educação em tempo integral terá absoluta prioridade no novo mandato."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 32,
+              "citacao": "Nenhum jovem em situação de pobreza ou vulnerabilidade social no Brasil deve deixar a escola por falta de renda."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Ampliar as escolas cívico-militares, atrelar o repasse de dinheiro a metas de aprendizagem e dar um vale para matrícula em outra escola onde faltar vaga pública.",
           "fontes": [
-            { "tipo": "plano", "pagina": 35, "citacao": "Vamos ampliar as Escolas Cívico-Militares, que uniram disciplina e bom desempenho onde foram implantadas" },
-            { "tipo": "plano", "pagina": 36, "citacao": "onde faltar vaga na rede pública, a família receberá um voucher educacional para matricular o filho em outra escola" }
+            {
+              "tipo": "plano",
+              "pagina": 35,
+              "citacao": "Vamos ampliar as Escolas Cívico-Militares, que uniram disciplina e bom desempenho onde foram implantadas"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 36,
+              "citacao": "onde faltar vaga na rede pública, a família receberá um voucher educacional para matricular o filho em outra escola"
+            }
           ]
         }
       ]
@@ -290,15 +456,27 @@
           "candidato": "lula",
           "texto": "Chegar ao desmatamento líquido zero até 2030: toda derrubada, mesmo a autorizada, precisa ser compensada com recuperação de floresta.",
           "fontes": [
-            { "tipo": "plano", "pagina": 70, "citacao": "continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos." }
+            {
+              "tipo": "plano",
+              "pagina": 70,
+              "citacao": "continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Zerar o desmatamento ilegal até 2029, concentrando a fiscalização em grilagem e crime ambiental, sem novas exigências para o produtor rural que cumpre a lei.",
           "fontes": [
-            { "tipo": "plano", "pagina": 58, "citacao": "Teremos a meta de zerar o desmatamento ilegal até 2029" },
-            { "tipo": "plano", "pagina": 58, "citacao": "sem criar novas obrigações ou custos desnecessários para o produtor rural que atua dentro da lei." }
+            {
+              "tipo": "plano",
+              "pagina": 58,
+              "citacao": "Teremos a meta de zerar o desmatamento ilegal até 2029"
+            },
+            {
+              "tipo": "plano",
+              "pagina": 58,
+              "citacao": "sem criar novas obrigações ou custos desnecessários para o produtor rural que atua dentro da lei."
+            }
           ]
         }
       ]
@@ -311,16 +489,24 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Avançar na reforma agrária, assentando as famílias que estão acampadas e ampliando o crédito para a compra de terra.",
+          "texto": "Fazer reforma agrária, assentando as famílias que estão acampadas e ampliando o crédito para a compra de terra.",
           "fontes": [
-            { "tipo": "plano", "pagina": 60, "citacao": "Continuaremos a avançar na política de reforma agrária, assentando as famílias acampadas, estruturando os assentamentos e ampliando o acesso ao crédito fundiário." }
+            {
+              "tipo": "plano",
+              "pagina": 60,
+              "citacao": "Continuaremos a avançar na política de reforma agrária, assentando as famílias acampadas, estruturando os assentamentos e ampliando o acesso ao crédito fundiário."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Entregar títulos de propriedade a pequenos produtores em larga escala e garantir o direito de propriedade rural sem exceções.",
           "fontes": [
-            { "tipo": "plano", "pagina": 54, "citacao": "traremos segurança jurídica sólida, irreversível e sem margem para relativizações do direito de propriedade, porque ninguém planta e investe no que teme perder." }
+            {
+              "tipo": "plano",
+              "pagina": 54,
+              "citacao": "traremos segurança jurídica sólida, irreversível e sem margem para relativizações do direito de propriedade, porque ninguém planta e investe no que teme perder."
+            }
           ]
         }
       ]
@@ -333,16 +519,24 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Seguir demarcando terras indígenas e retirando invasores dessas áreas, para proteger os territórios.",
+          "texto": "Demarcar terras indígenas e retirar invasores dessas áreas, para proteger os territórios, a cultura e o modo de vida desses povos.",
           "fontes": [
-            { "tipo": "plano", "pagina": 20, "citacao": "garantindo proteção a seus territórios, com ações para demarcação e desintrusão de terras sempre que necessárias." }
+            {
+              "tipo": "plano",
+              "pagina": 20,
+              "citacao": "garantindo proteção a seus territórios, com ações para demarcação e desintrusão de terras sempre que necessárias."
+            }
           ]
         },
         {
           "candidato": "flavio",
           "texto": "Dar autonomia a indígenas e quilombolas para decidir sobre atividades econômicas dentro de suas terras, respeitando as regras ambientais.",
           "fontes": [
-            { "tipo": "plano", "pagina": 50, "citacao": "Será conferida autonomia aos povos indígenas e quilombolas para decidir sobre atividades produtivas em suas terras, com respeito ao desenvolvimento sustentável e às regras ambientais" }
+            {
+              "tipo": "plano",
+              "pagina": 50,
+              "citacao": "Será conferida autonomia aos povos indígenas e quilombolas para decidir sobre atividades produtivas em suas terras, com respeito ao desenvolvimento sustentável e às regras ambientais"
+            }
           ]
         }
       ]
@@ -355,17 +549,29 @@
       "opcoes": [
         {
           "candidato": "lula",
-          "texto": "Aproximar o Brasil dos BRICS e dos países do Sul Global, aprofundar o Mercosul e manter relações com todas as regiões, sem se alinhar a uma potência.",
+          "texto": "Aproximar o Brasil dos BRICS e dos países do Sul Global, aprofundar o Mercosul e ter relações com todas as regiões, sem se alinhar a uma potência.",
           "fontes": [
-            { "tipo": "plano", "pagina": 81, "citacao": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20" }
+            {
+              "tipo": "plano",
+              "pagina": 81,
+              "citacao": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20"
+            }
           ]
         },
         {
           "candidato": "flavio",
-          "texto": "Reaproximar o Brasil de Estados Unidos, Israel e Argentina, retomar a entrada na OCDE e abrir mais a economia ao comércio, negociando com todos os mercados.",
+          "texto": "Fortalecer a relação com Estados Unidos, Israel e Argentina, entrar na OCDE e abrir mais a economia ao comércio, negociando com todos os mercados.",
           "fontes": [
-            { "tipo": "plano", "pagina": 62, "citacao": "Nos últimos anos, as relações com países como Argentina, Estados Unidos e Israel foram levadas ao limite do rompimento. Vamos reverter esse quadro com profissionalismo e foco no interesse do Brasil." },
-            { "tipo": "plano", "pagina": 63, "citacao": "O passo mais urgente é retomar o cronograma interrompido de adesão à OCDE" }
+            {
+              "tipo": "plano",
+              "pagina": 62,
+              "citacao": "Nos últimos anos, as relações com países como Argentina, Estados Unidos e Israel foram levadas ao limite do rompimento. Vamos reverter esse quadro com profissionalismo e foco no interesse do Brasil."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 63,
+              "citacao": "O passo mais urgente é retomar o cronograma interrompido de adesão à OCDE"
+            }
           ]
         }
       ]

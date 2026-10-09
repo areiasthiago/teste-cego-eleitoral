@@ -45,6 +45,9 @@ for (const r of rodadas) {
   for (const o of r.opcoes) {
     const quem = `${onde} ${o.candidato}`;
     if (!o.fontes?.length) erros.push(`${quem}: sem fonte`);
+    // Palavras que denunciam quem está no governo ou na oposição quebram o teste cego.
+    const pista = o.texto.match(/(?<!\p{L})(mant[eé]\p{L}*|seguir|segue|seguindo|continu\p{L}*|retom\p{L}*|reaproxim\p{L}*|rever|revis\p{L}*|voltar|volte|atual|atuais|recentes?|hoje|já)(?!\p{L})/iu);
+    if (pista) erros.push(`${quem}: o cartão dá pista de situação/oposição ("${pista[0]}")`);
     for (const nome of Object.values(candidatos).flatMap((c) => c.nome.split(' '))) {
       if (o.texto.includes(nome)) erros.push(`${quem}: o cartão cita "${nome}"`);
     }

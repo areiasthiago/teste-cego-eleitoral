@@ -2,3 +2,4 @@
 Thumbs.db
 node_modules/
 .supabase/
+supabase/.temp/
