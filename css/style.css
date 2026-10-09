@@ -1,5 +1,5 @@
 /* Estilo "blocos vibrantes": traço grosso, sombra dura, duas cores de destaque.
-   Roxo e âmbar de propósito: nada de vermelho, verde-amarelo ou azul de campanha. */
+   Roxo e rosa de propósito: nada de vermelho, amarelo, verde ou azul, cores associadas aos candidatos. */
 @font-face {
   font-family: "Bricolage Grotesque";
   src: url("../fonts/bricolage-grotesque.woff2") format("woff2");
@@ -8,18 +8,18 @@
 }
 
 :root {
-  --fundo: #f6f1e7;
+  --fundo: #f5f3fa;
   --papel: #ffffff;
   --tinta: #17132b;
   --suave: #5d5873;
   --traco: #17132b;
-  --linha: #d9d2c3;
+  --linha: #d7d2e4;
   --roxo: #6d3bf5;
   --roxo-tinta: #ffffff;
   --roxo-claro: #e9e1ff;
-  --ambar: #ffb629;
-  --ambar-tinta: #17132b;
-  --ambar-claro: #fff0cc;
+  --rosa: #ff6fb5;
+  --rosa-tinta: #17132b;
+  --rosa-claro: #ffe3f1;
   --sombra: #17132b;
   --link: #5a2ee0;
   --titulo: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -37,9 +37,9 @@
   --roxo: #9b7bff;
   --roxo-tinta: #12101f;
   --roxo-claro: #2d2550;
-  --ambar: #ffc247;
-  --ambar-tinta: #17132b;
-  --ambar-claro: #3d3115;
+  --rosa: #ff8cc6;
+  --rosa-tinta: #17132b;
+  --rosa-claro: #4a2140;
   --sombra: #000000;
   --link: #b9a3ff;
   color-scheme: dark;
@@ -63,7 +63,7 @@ body {
 /* Formas geométricas de fundo: só em tela larga, fora da coluna de texto */
 @media (min-width: 1100px) {
   body::before, body::after { content: ""; position: fixed; z-index: -1; border: 3px solid var(--traco); }
-  body::before { width: 200px; height: 200px; right: 5vw; top: 120px; border-radius: 50%; background: var(--ambar); }
+  body::before { width: 200px; height: 200px; right: 5vw; top: 120px; border-radius: 50%; background: var(--rosa); }
   body::after { width: 150px; height: 150px; left: 5vw; bottom: 80px; border-radius: 28px; background: var(--roxo); transform: rotate(18deg); }
 }
 
@@ -130,8 +130,8 @@ main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 8px 16px
   padding: 5px 12px;
   border: 2.5px solid var(--traco);
   border-radius: 999px;
-  background: var(--ambar);
-  color: var(--ambar-tinta);
+  background: var(--rosa);
+  color: var(--rosa-tinta);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -140,8 +140,8 @@ main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 8px 16px
 
 .inicio { padding-top: 3vh; }
 .chamada { font-size: 1.2rem; }
-.destaque { background: linear-gradient(transparent 58%, var(--ambar) 58%); }
-:root[data-theme="dark"] .destaque { background: none; color: var(--ambar); }
+.destaque { background: linear-gradient(transparent 58%, var(--rosa) 58%); }
+:root[data-theme="dark"] .destaque { background: none; color: var(--rosa); }
 
 .passos { list-style: none; margin: 0; padding: 0 0 6px; counter-reset: passo; }
 .passos li {
@@ -219,7 +219,7 @@ main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 8px 16px
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s, background-color 0.2s;
 }
-.botao.principal { background: var(--ambar); color: var(--ambar-tinta); box-shadow: 5px 5px 0 var(--sombra); }
+.botao.principal { background: var(--rosa); color: var(--rosa-tinta); box-shadow: 5px 5px 0 var(--sombra); }
 .botao.principal:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--sombra); }
 .botao.principal:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--sombra); }
 .botao.discreto { background: var(--papel); color: var(--tinta); font-size: 1rem; }
@@ -293,7 +293,7 @@ body:has(.rodada) .rodape { display: none; }
 .cartao:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--sombra); }
 .cartao:active, .cartao.escolhido { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--sombra); }
 .cartao.a.escolhido { background: var(--roxo-claro); }
-.cartao.b.escolhido { background: var(--ambar-claro); }
+.cartao.b.escolhido { background: var(--rosa-claro); }
 .cartoes.travado .cartao:not(.escolhido) { opacity: 0.45; }
 .letra {
   display: inline-flex;
@@ -309,7 +309,7 @@ body:has(.rodada) .rodape { display: none; }
   text-transform: uppercase;
 }
 .cartao.a .letra { background: var(--roxo); color: var(--roxo-tinta); }
-.cartao.b .letra { background: var(--ambar); color: var(--ambar-tinta); }
+.cartao.b .letra { background: var(--rosa); color: var(--rosa-tinta); }
 
 .acoes {
   position: fixed;
@@ -369,7 +369,7 @@ body:has(.rodada) .rodape { display: none; }
 
 .barra { display: flex; height: 22px; border: 2.5px solid var(--traco); border-radius: 999px; overflow: hidden; background: var(--papel); }
 .barra span:first-child { background: var(--roxo); }
-.barra span:last-child { background: var(--ambar); }
+.barra span:last-child { background: var(--rosa); }
 
 .bloco { margin-top: 14px; }
 .areas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -406,7 +406,7 @@ body:has(.rodada) .rodape { display: none; }
 .proposta summary { display: inline-flex; align-items: center; min-height: 44px; color: var(--link); font-size: 0.88rem; font-weight: 600; cursor: pointer; }
 .fontes { margin: 4px 0 0; padding-left: 18px; color: var(--suave); font-size: 0.86rem; }
 .fontes li + li { margin-top: 6px; }
-.contexto { display: grid; gap: 4px; margin-top: 8px; padding: 10px 12px; border-left: 5px solid var(--ambar); border-radius: 8px; background: var(--ambar-claro); font-size: 0.88rem; }
+.contexto { display: grid; gap: 4px; margin-top: 8px; padding: 10px 12px; border-left: 5px solid var(--rosa); border-radius: 8px; background: var(--rosa-claro); font-size: 0.88rem; }
 
 .rodape {
   display: flex;

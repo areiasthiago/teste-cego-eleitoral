@@ -36,7 +36,7 @@ export async function gerarImagem(lados) {
   const ctx = canvas.getContext('2d');
   const fonte = (peso, tamanho) => `${peso} ${tamanho}px "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`;
 
-  ctx.fillStyle = '#f6f1e7';
+  ctx.fillStyle = '#f5f3fa';
   ctx.fillRect(0, 0, L, A);
   ctx.textAlign = 'center';
 

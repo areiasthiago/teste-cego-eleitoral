@@ -6,7 +6,7 @@ const botao = document.querySelector('.tema');
 function aplicar(tema) {
   raiz.dataset.theme = tema;
   botao.setAttribute('aria-label', tema === 'dark' ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', tema === 'dark' ? '#12101f' : '#f6f1e7');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', tema === 'dark' ? '#12101f' : '#f5f3fa');
 }
 
 aplicar(raiz.dataset.theme === 'dark' ? 'dark' : 'light');
