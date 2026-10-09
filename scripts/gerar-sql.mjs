@@ -7,7 +7,7 @@ const { rodadas } = JSON.parse(readFileSync(new URL('data/rodadas.json', raiz), 
 
 const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
-  .concat("  ('_concluidos', '-')")
+  .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')")
   .join(',\n');
 
 const sql = `-- Gerado por scripts/gerar-sql.mjs. Rode no SQL Editor do Supabase.
@@ -46,7 +46,7 @@ begin
       select distinct e->>'rodada' as rodada, e->>'candidato' as candidato
         from jsonb_array_elements(escolhas) e
     ) x
-   where c.rodada = x.rodada and c.candidato = x.candidato and c.rodada <> '_concluidos';
+   where c.rodada = x.rodada and c.candidato = x.candidato and left(c.rodada, 1) <> '_';
 
   update contagem set total = total + 1 where rodada = '_concluidos';
 end;
@@ -54,6 +54,20 @@ $$;
 
 revoke all on function public.registrar(jsonb) from public;
 grant execute on function public.registrar(jsonb) to anon;
+
+-- Funil de engajamento: abriu o site, começou o teste, concluiu. Também só totais.
+create or replace function public.marcar(evento text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  update contagem set total = total + 1
+   where rodada = '_' || evento and evento in ('abriu', 'comecou', 'concluiu');
+$$;
+
+revoke all on function public.marcar(text) from public;
+grant execute on function public.marcar(text) to anon;
 `;
 
 writeFileSync(new URL('sql/contagem.sql', raiz), sql);

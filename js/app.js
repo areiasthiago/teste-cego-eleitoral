@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=1.4';
-import { registrar } from './contagem.js?v=1.4';
-import { compartilhar } from './compartilhar.js?v=1.4';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.4';
+import { calcular } from './pontuacao.js?v=1.5';
+import { registrar, marcar } from './contagem.js?v=1.5';
+import { compartilhar } from './compartilhar.js?v=1.5';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.5';
 
 const CHAVE = 'teste-cego:v2';
 const app = document.getElementById('app');
@@ -91,7 +91,7 @@ function telaInicio() {
         el('li', {}, 'Leia duas propostas sobre o mesmo assunto'),
         el('li', {}, 'Toque na que mais combina com você'),
         el('li', {}, 'No final, veja de quem era cada uma')),
-      el('button', { class: 'botao principal', onclick: () => { estado.iniciado = true; salvar(); telaRodada(); } }, 'Começar o teste'),
+      el('button', { class: 'botao principal', onclick: () => { estado.iniciado = true; salvar(); marcar('comecou'); telaRodada(); } }, 'Começar o teste'),
       el('p', {}, `São ${rodadas.length} perguntas. Leva uns 5 minutos.`),
       el('p', { class: 'aviso' },
         'Suas escolhas entram numa contagem anônima, sem identificar você. ',
@@ -153,6 +153,7 @@ function telaRodada() {
 function concluir() {
   estado.concluido = true;
   salvar();
+  marcar('concluiu');
   if (!estado.enviado) {
     registrar(rodadas, estado.respostas).then((ok) => {
       if (ok) { estado.enviado = true; salvar(); }
@@ -246,7 +247,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=1.4')).json();
+  dados = await (await fetch('data/rodadas.json?v=1.5')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.
@@ -264,6 +265,7 @@ async function iniciar() {
   const porId = new Map(dados.rodadas.map((r) => [r.id, r]));
   rodadas = estado.ordem.map((id) => porId.get(id));
 
+  marcar('abriu', { novo: !estado.iniciado });
   if (estado.concluido) telaResultado();
   else if (estado.iniciado) telaRodada();
   else telaInicio();
