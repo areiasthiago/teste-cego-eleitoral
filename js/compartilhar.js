@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=0.44';
+import { SITE } from './config.js?v=0.45';
 
 // Formato de story (9:16), com respiro em cima e embaixo para a interface do aplicativo.
 const L = 1080;
@@ -95,7 +95,7 @@ export async function gerarImagem(lados) {
   ctx.fillText(selo, L / 2, 286);
 
   // Título, com marca-texto na segunda linha
-  ctx.font = fonte(800, 86);
+  ctx.font = fonte(800, 80);
   const linha2 = 'sem saber de quem eram';
   const larguraLinha2 = ctx.measureText(linha2).width;
   ctx.fillStyle = COR.marcaTexto;
@@ -109,7 +109,7 @@ export async function gerarImagem(lados) {
   const altura = 650;
   lados.forEach((lado, i) => {
     const x = i === 0 ? 50 : L - 50 - largura;
-    const y = lado.lider ? 640 : 664;
+    const y = 650; // mesma altura nos dois, para rostos e números ficarem alinhados
     bloco(ctx, x, y, largura, altura, 44, lado.lider ? COR.roxoClaro : COR.papel, lado.lider ? 14 : 0);
     const cx = x + largura / 2;
     retrato(ctx, imagens[i], cx, y + 200, 158);
