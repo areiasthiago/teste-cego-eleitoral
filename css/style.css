@@ -45,7 +45,7 @@
   color-scheme: dark;
 }
 
-/* Paletas em avaliação: abrir o site com ?paleta=a, b ou c. As variáveis --roxo e --rosa
+/* Paletas em avaliação: abrir o site com ?paleta=a, b, c ou d. As variáveis --roxo e --rosa
    são a cor principal e a de destaque, seja qual for o tom. */
 :root[data-paleta="a"] { /* Grafite e laranja */
   --fundo: #f6f4f1; --linha: #d8d4cd; --suave: #5f5a55; --tinta: #1c1a1f; --traco: #1c1a1f; --sombra: #1c1a1f;
@@ -76,6 +76,16 @@
   --fundo: #17101b; --papel: #251a2b; --linha: #45344d; --suave: #bdaec4; --tinta: #f8f1fa; --traco: #f8f1fa; --sombra: #000000;
   --roxo: #cfa3e8; --roxo-tinta: #17101b; --roxo-claro: #3a2647;
   --rosa: #ffb59a; --rosa-tinta: #24122c; --rosa-claro: #4d2f26; --link: #dcb8f0;
+}
+:root[data-paleta="d"] { /* Grafite e roxo */
+  --fundo: #f5f5f6; --linha: #d6d5da; --suave: #5d5b63; --tinta: #1c1a1f; --traco: #1c1a1f; --sombra: #1c1a1f;
+  --roxo: #2b2832; --roxo-tinta: #ffffff; --roxo-claro: #e6e4ea;
+  --rosa: #7c4dff; --rosa-tinta: #ffffff; --rosa-claro: #e9e1ff; --link: #5a2ee0;
+}
+:root[data-paleta="d"][data-theme="dark"] {
+  --fundo: #141316; --papel: #211f26; --linha: #3a3840; --suave: #b3b0ba; --tinta: #f4f2f6; --traco: #f4f2f6; --sombra: #000000;
+  --roxo: #dcd8e4; --roxo-tinta: #141316; --roxo-claro: #34313b;
+  --rosa: #a48aff; --rosa-tinta: #141316; --rosa-claro: #2d2550; --link: #b9a3ff;
 }
 
 * { box-sizing: border-box; }
