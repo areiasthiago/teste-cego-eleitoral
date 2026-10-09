@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=1.1';
+import { SITE } from './config.js?v=1.2';
 
 // Formato de story (9:16), com respiro em cima e embaixo para a interface do aplicativo.
 const L = 1080;
@@ -71,7 +71,8 @@ function retrato(ctx, img, cx, cy, raio) {
 }
 
 // lados: [{ nome, pct, imagem, lider }] na ordem em que aparecem na tela.
-export async function gerarImagem(lados) {
+// neutro: convite sem resultado, com os dois candidatos em pé de igualdade.
+export async function gerarImagem(lados, neutro = false) {
   const [imagens] = await Promise.all([
     Promise.all(lados.map((lado) => carregar(lado.imagem))),
     document.fonts?.load(fonte(800, 100)).catch(() => {}),
@@ -96,12 +97,12 @@ export async function gerarImagem(lados) {
 
   // Título, com marca-texto na segunda linha
   ctx.font = fonte(800, 80);
-  const linha2 = 'sem saber de quem eram';
+  const [linha1, linha2] = neutro ? ['Com quem você', 'concorda mais?'] : ['Escolhi propostas', 'sem saber de quem eram'];
   const larguraLinha2 = ctx.measureText(linha2).width;
   ctx.fillStyle = COR.marcaTexto;
   ctx.fillRect((L - larguraLinha2) / 2 - 10, 508, larguraLinha2 + 20, 46);
   ctx.fillStyle = COR.tinta;
-  ctx.fillText('Escolhi propostas', L / 2, 440);
+  ctx.fillText(linha1, L / 2, 440);
   ctx.fillText(linha2, L / 2, 540);
 
   // Cartões dos candidatos
@@ -110,19 +111,27 @@ export async function gerarImagem(lados) {
   lados.forEach((lado, i) => {
     const x = i === 0 ? 50 : L - 50 - largura;
     const y = 650; // mesma altura nos dois, para rostos e números ficarem alinhados
-    bloco(ctx, x, y, largura, altura, 44, lado.lider ? COR.roxoClaro : COR.papel, lado.lider ? 14 : 0);
+    const destaque = !neutro && lado.lider;
+    bloco(ctx, x, y, largura, altura, 44, destaque ? COR.roxoClaro : COR.papel, destaque ? 14 : 0);
     const cx = x + largura / 2;
     retrato(ctx, imagens[i], cx, y + 200, 158);
     ctx.fillStyle = COR.tinta;
     ctx.font = fonte(800, 156);
-    ctx.fillText(`${lado.pct}%`, cx, y + 510);
+    ctx.fillText(neutro ? '?' : `${lado.pct}%`, cx, y + 510);
     textoAjustado(ctx, lado.nome, cx, y + 590, 700, 46, largura - 48);
   });
 
-  // Barra dividida
+  // Barra dividida (ou, no convite, a explicação do teste)
   const barra = { x: 50, y: 1372, w: L - 100, h: 48 };
-  bloco(ctx, barra.x, barra.y, barra.w, barra.h, 24, COR.grafite);
-  const parte = Math.max(0, Math.min(1, lados[0].pct / 100)) * barra.w;
+  if (neutro) {
+    ctx.fillStyle = COR.tinta;
+    ctx.font = fonte(700, 42);
+    ctx.fillText('Fiz o teste cego: escolhi propostas', L / 2, 1382);
+    ctx.fillText('sem saber de quem eram.', L / 2, 1436);
+  } else {
+    bloco(ctx, barra.x, barra.y, barra.w, barra.h, 24, COR.grafite);
+  }
+  const parte = neutro ? 0 : Math.max(0, Math.min(1, lados[0].pct / 100)) * barra.w;
   if (parte > 0) {
     ctx.save();
     ctx.beginPath();
@@ -150,8 +159,8 @@ export async function gerarImagem(lados) {
   return new Promise((ok) => canvas.toBlob(ok, 'image/png'));
 }
 
-export async function compartilhar(lados) {
-  const blob = await gerarImagem(lados);
+export async function compartilhar(lados, neutro = false) {
+  const blob = await gerarImagem(lados, neutro);
   const arquivo = new File([blob], 'teste-cego.png', { type: 'image/png' });
   const texto = `Fiz o Teste Cego das eleições: escolhi propostas sem saber de quem eram. Se você ainda está indeciso, faça o seu: https://${SITE}`;
 
