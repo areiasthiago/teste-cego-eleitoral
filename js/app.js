@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=0.7';
-import { registrar } from './contagem.js?v=0.7';
-import { compartilhar } from './compartilhar.js?v=0.7';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.7';
+import { calcular } from './pontuacao.js?v=0.8';
+import { registrar } from './contagem.js?v=0.8';
+import { compartilhar } from './compartilhar.js?v=0.8';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.8';
 
 const CHAVE = 'teste-cego:v1';
 const app = document.getElementById('app');
@@ -202,10 +202,16 @@ function telaResultado() {
     el('h3', {}, 'De quem era cada proposta'),
     carrossel('Propostas reveladas', rodadas.map((rodada) => {
       const escolha = estado.respostas[rodada.id]?.escolha;
+      // Fechado, todo cartão tem a mesma altura e mostra só o começo de cada proposta.
+      const expandir = el('button', { class: 'expandir', type: 'button', 'aria-expanded': 'false', onclick: () => {
+        const aberta = expandir.parentElement.classList.toggle('aberta');
+        expandir.setAttribute('aria-expanded', String(aberta));
+        expandir.textContent = aberta ? 'Mostrar menos' : 'Ler tudo e ver as fontes';
+      } }, 'Ler tudo e ver as fontes');
       return el('article', { class: 'revelada' },
         el('p', { class: 'selo' }, rodada.tema),
         el('p', { class: 'pergunta' }, rodada.pergunta),
-        rodada.opcoes.map((opcao) => el('div', { class: `proposta ${opcao.candidato === escolha ? 'escolhida' : ''}` },
+        el('div', { class: 'corpo' }, rodada.opcoes.map((opcao) => el('div', { class: `proposta ${opcao.candidato === escolha ? 'escolhida' : ''}` },
           el('h4', {}, nome(opcao.candidato), opcao.candidato === escolha && el('span', { class: 'sua' }, 'sua escolha')),
           el('p', {}, opcao.texto),
           el('details', {}, el('summary', {}, 'Ver trecho original e fonte'),
@@ -213,7 +219,8 @@ function telaResultado() {
           opcao.contexto && el('aside', { class: 'contexto' },
             el('strong', {}, 'Contexto'),
             el('p', {}, opcao.contexto.texto),
-            el('p', {}, opcao.contexto.links.flatMap((l, i) => [i > 0 && ' · ', el('a', { href: l.url, target: '_blank', rel: 'noopener noreferrer' }, l.rotulo)]))))));
+            el('p', {}, opcao.contexto.links.flatMap((l, i) => [i > 0 && ' · ', el('a', { href: l.url, target: '_blank', rel: 'noopener noreferrer' }, l.rotulo)])))))),
+        expandir);
     })));
 
   mostrar(
@@ -235,7 +242,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=0.7')).json();
+  dados = await (await fetch('data/rodadas.json?v=0.8')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.
