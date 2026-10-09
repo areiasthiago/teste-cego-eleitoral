@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=0.15';
-import { registrar } from './contagem.js?v=0.15';
-import { compartilhar } from './compartilhar.js?v=0.15';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.15';
+import { calcular } from './pontuacao.js?v=0.16';
+import { registrar } from './contagem.js?v=0.16';
+import { compartilhar } from './compartilhar.js?v=0.16';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=0.16';
 
 const CHAVE = 'teste-cego:v1';
 const app = document.getElementById('app');
@@ -178,7 +178,7 @@ function telaResultado() {
   const nome = (c) => dados.candidatos[c].nome;
   const ordem = res.lider === 'flavio' ? ['flavio', 'lula'] : ['lula', 'flavio'];
   const humor = (c) => (res.lider === c ? 'alegre' : 'serio');
-  const lados = ordem.map((c) => ({ id: c, nome: nome(c), pct: res.pct?.[c] ?? 0, imagem: `img/${c}-${humor(c)}.webp` }));
+  const lados = ordem.map((c) => ({ id: c, nome: nome(c), pct: res.pct?.[c] ?? 0, imagem: `img/${c}-${humor(c)}.webp`, lider: res.lider === c }));
 
   let titulo = 'Deu empate';
   if (!res.pct) titulo = 'Você não escolheu nenhum lado';
@@ -242,7 +242,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=0.15')).json();
+  dados = await (await fetch('data/rodadas.json?v=0.16')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.
