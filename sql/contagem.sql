@@ -71,6 +71,9 @@ insert into public.contagem (rodada, candidato) values
   ('saude', 'lula'),
   ('saude', 'flavio'),
   ('saude', 'nenhum'),
+  ('armas', 'lula'),
+  ('armas', 'flavio'),
+  ('armas', 'nenhum'),
   ('_concluidos', '-')
 on conflict do nothing;
 

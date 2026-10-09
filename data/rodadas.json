@@ -760,6 +760,52 @@
           ]
         }
       ]
+    },
+    {
+      "id": "armas",
+      "area": "Segurança",
+      "tema": "Armas",
+      "pergunta": "O cidadão comum deve ter mais facilidade para ter uma arma?",
+      "opcoes": [
+        {
+          "candidato": "lula",
+          "texto": "Não. Deixar rígidas as regras para comprar e ter arma, e aumentar a fiscalização sobre armas, munições e sobre quem tem registro de caçador, atirador ou colecionador.",
+          "fontes": [
+            {
+              "tipo": "plano",
+              "pagina": 28,
+              "citacao": "manteremos uma política de controle de armas e munições, fundamental para reduzir a violência e fortalecer uma política democrática de segurança pública."
+            },
+            {
+              "tipo": "plano",
+              "pagina": 28,
+              "citacao": "Aprimoraremos os mecanismos de rastreabilidade de armas e munições e reforçaremos a capacidade de fiscalização da Polícia Federal e do Exército sobre empresas de segurança privada, defesa pessoal e registros de caçadores, atiradores e colecionadores."
+            }
+          ]
+        },
+        {
+          "candidato": "flavio",
+          "texto": "Apesar de não constar no plano oficial, o candidato diz que sim: o cidadão deve poder ter arma para se defender, porque só bandido anda armado. Ele não detalhou quais regras mudaria.",
+          "fontes": [
+            {
+              "tipo": "imprensa",
+              "veiculo": "Jornal de Brasília (Folhapress)",
+              "data": "2026-10-07",
+              "url": "https://jornaldebrasilia.com.br/noticias/politica-e-poder/flavio-indica-retomar-agenda-armamentista-do-pai-e-promete-acesso-a-armas-para-legitima-defesa/",
+              "citacao": "legítima defesa tem que voltar, né? Só quem tá armado é bandido"
+            }
+          ],
+          "contexto": {
+            "texto": "Segundo a Folha de S.Paulo, aliados do candidato falam em revogar os decretos que restringiram o acesso a armas e em mudar o Estatuto do Desarmamento. Ele não confirmou essas medidas, e um desses aliados disse que nada está definido.",
+            "links": [
+              {
+                "rotulo": "Jornal de Brasília (Folhapress), 07/10/2026",
+                "url": "https://jornaldebrasilia.com.br/noticias/politica-e-poder/flavio-indica-retomar-agenda-armamentista-do-pai-e-promete-acesso-a-armas-para-legitima-defesa/"
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

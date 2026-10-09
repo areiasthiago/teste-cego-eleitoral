@@ -11,7 +11,7 @@ const VEICULOS = [
   'valor.globo.com', 'cnnbrasil.com.br', 'bbc.com', 'poder360.com.br', 'agenciabrasil.ebc.com.br',
   'reuters.com', 'jota.info', 'nexojornal.com.br', 'piaui.folha.uol.com.br', 'sbtnews.sbt.com.br',
   'congressoemfoco.com.br', 'terra.com.br', 'correiobraziliense.com.br', 'metropoles.com',
-  'diariodonordeste.verdesmares.com.br', 'em.com.br',
+  'diariodonordeste.verdesmares.com.br', 'em.com.br', 'jornaldebrasilia.com.br',
 ];
 
 const AVISO_FORA_DO_PLANO = 'Apesar de não constar no plano oficial';
