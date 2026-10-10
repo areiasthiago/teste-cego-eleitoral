@@ -131,7 +131,19 @@ insert into public.contagem (rodada, candidato) values
   ('_origem_concluiu', 'busca'),
   ('_origem_concluiu', 'c'),
   ('_origem_concluiu', 'direto'),
-  ('_origem_concluiu', 'outro')
+  ('_origem_concluiu', 'outro'),
+  ('_mix_lula', 'lula'),
+  ('_mix_lula', 'flavio'),
+  ('_mix_lula', 'nenhum'),
+  ('_mix_lula', 'testes'),
+  ('_mix_flavio', 'lula'),
+  ('_mix_flavio', 'flavio'),
+  ('_mix_flavio', 'nenhum'),
+  ('_mix_flavio', 'testes'),
+  ('_mix_empate', 'lula'),
+  ('_mix_empate', 'flavio'),
+  ('_mix_empate', 'nenhum'),
+  ('_mix_empate', 'testes')
 on conflict do nothing;
 
 create or replace function public.registrar(escolhas jsonb)
@@ -140,6 +152,8 @@ language plpgsql
 security definer
 set search_path = public
 as $$
+declare
+  l int; f int; n int; grupo text;
 begin
   if jsonb_typeof(escolhas) <> 'array' or jsonb_array_length(escolhas) > 40 then
     return;
@@ -154,6 +168,19 @@ begin
    where c.rodada = x.rodada and c.candidato = x.candidato and left(c.rodada, 1) <> '_';
 
   update contagem set total = total + 1 where rodada = '_concluidos';
+
+  -- Composição das escolhas conforme quem ficou na frente no teste: soma, dentro do grupo
+  -- (lula, flavio ou empate), quantas escolhas foram para cada lado. Só totais por grupo.
+  select count(*) filter (where x.candidato = 'lula'), count(*) filter (where x.candidato = 'flavio'), count(*) filter (where x.candidato = 'nenhum')
+    into l, f, n
+    from (select distinct e->>'rodada' as rodada, e->>'candidato' as candidato from jsonb_array_elements(escolhas) e) x
+    join contagem c on c.rodada = x.rodada and c.candidato = x.candidato and left(c.rodada, 1) <> '_';
+  if l + f > 0 then
+    grupo := case when l > f then 'lula' when f > l then 'flavio' else 'empate' end;
+    update contagem
+       set total = total + case candidato when 'lula' then l when 'flavio' then f when 'nenhum' then n else 1 end
+     where rodada = '_mix_' || grupo;
+  end if;
 end;
 $$;
 

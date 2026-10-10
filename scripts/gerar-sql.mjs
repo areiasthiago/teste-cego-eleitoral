@@ -12,6 +12,7 @@ const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
   .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
   .concat(['abriu', 'comecou', 'concluiu'].flatMap((e) => CANAIS.map((c) => `  ('_origem_${e}', '${c}')`)))
+  .concat(['lula', 'flavio', 'empate'].flatMap((g) => ['lula', 'flavio', 'nenhum', 'testes'].map((c) => `  ('_mix_${g}', '${c}')`)))
   .join(',\n');
 
 const sql = `-- Gerado por scripts/gerar-sql.mjs. Rode no SQL Editor do Supabase.
@@ -39,6 +40,8 @@ language plpgsql
 security definer
 set search_path = public
 as $$
+declare
+  l int; f int; n int; grupo text;
 begin
   if jsonb_typeof(escolhas) <> 'array' or jsonb_array_length(escolhas) > 40 then
     return;
@@ -53,6 +56,19 @@ begin
    where c.rodada = x.rodada and c.candidato = x.candidato and left(c.rodada, 1) <> '_';
 
   update contagem set total = total + 1 where rodada = '_concluidos';
+
+  -- Composição das escolhas conforme quem ficou na frente no teste: soma, dentro do grupo
+  -- (lula, flavio ou empate), quantas escolhas foram para cada lado. Só totais por grupo.
+  select count(*) filter (where x.candidato = 'lula'), count(*) filter (where x.candidato = 'flavio'), count(*) filter (where x.candidato = 'nenhum')
+    into l, f, n
+    from (select distinct e->>'rodada' as rodada, e->>'candidato' as candidato from jsonb_array_elements(escolhas) e) x
+    join contagem c on c.rodada = x.rodada and c.candidato = x.candidato and left(c.rodada, 1) <> '_';
+  if l + f > 0 then
+    grupo := case when l > f then 'lula' when f > l then 'flavio' else 'empate' end;
+    update contagem
+       set total = total + case candidato when 'lula' then l when 'flavio' then f when 'nenhum' then n else 1 end
+     where rodada = '_mix_' || grupo;
+  end if;
 end;
 $$;
 
