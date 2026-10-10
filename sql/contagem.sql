@@ -136,14 +136,23 @@ insert into public.contagem (rodada, candidato) values
   ('_mix_lula', 'flavio'),
   ('_mix_lula', 'nenhum'),
   ('_mix_lula', 'testes'),
+  ('_mix_lula', 'var_n'),
+  ('_mix_lula', 'var_soma'),
+  ('_mix_lula', 'var_quad'),
   ('_mix_flavio', 'lula'),
   ('_mix_flavio', 'flavio'),
   ('_mix_flavio', 'nenhum'),
   ('_mix_flavio', 'testes'),
+  ('_mix_flavio', 'var_n'),
+  ('_mix_flavio', 'var_soma'),
+  ('_mix_flavio', 'var_quad'),
   ('_mix_empate', 'lula'),
   ('_mix_empate', 'flavio'),
   ('_mix_empate', 'nenhum'),
-  ('_mix_empate', 'testes')
+  ('_mix_empate', 'testes'),
+  ('_mix_empate', 'var_n'),
+  ('_mix_empate', 'var_soma'),
+  ('_mix_empate', 'var_quad')
 on conflict do nothing;
 
 create or replace function public.registrar(escolhas jsonb)
@@ -178,7 +187,12 @@ begin
   if l + f > 0 then
     grupo := case when l > f then 'lula' when f > l then 'flavio' else 'empate' end;
     update contagem
-       set total = total + case candidato when 'lula' then l when 'flavio' then f when 'nenhum' then n else 1 end
+       -- var_n, var_soma e var_quad guardam quantos testes, a soma e a soma dos quadrados das
+       -- escolhas pelo lado que ficou na frente: o bastante para calcular a margem de erro do grupo.
+       set total = total + case candidato
+             when 'lula' then l when 'flavio' then f when 'nenhum' then n
+             when 'var_soma' then greatest(l, f) when 'var_quad' then greatest(l, f) * greatest(l, f)
+             else 1 end
      where rodada = '_mix_' || grupo;
   end if;
 end;

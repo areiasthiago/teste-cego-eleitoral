@@ -12,7 +12,7 @@ const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
   .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
   .concat(['abriu', 'comecou', 'concluiu'].flatMap((e) => CANAIS.map((c) => `  ('_origem_${e}', '${c}')`)))
-  .concat(['lula', 'flavio', 'empate'].flatMap((g) => ['lula', 'flavio', 'nenhum', 'testes'].map((c) => `  ('_mix_${g}', '${c}')`)))
+  .concat(['lula', 'flavio', 'empate'].flatMap((g) => ['lula', 'flavio', 'nenhum', 'testes', 'var_n', 'var_soma', 'var_quad'].map((c) => `  ('_mix_${g}', '${c}')`)))
   .join(',\n');
 
 const sql = `-- Gerado por scripts/gerar-sql.mjs. Rode no SQL Editor do Supabase.
@@ -66,7 +66,12 @@ begin
   if l + f > 0 then
     grupo := case when l > f then 'lula' when f > l then 'flavio' else 'empate' end;
     update contagem
-       set total = total + case candidato when 'lula' then l when 'flavio' then f when 'nenhum' then n else 1 end
+       -- var_n, var_soma e var_quad guardam quantos testes, a soma e a soma dos quadrados das
+       -- escolhas pelo lado que ficou na frente: o bastante para calcular a margem de erro do grupo.
+       set total = total + case candidato
+             when 'lula' then l when 'flavio' then f when 'nenhum' then n
+             when 'var_soma' then greatest(l, f) when 'var_quad' then greatest(l, f) * greatest(l, f)
+             else 1 end
      where rodada = '_mix_' || grupo;
   end if;
 end;
