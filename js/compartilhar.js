@@ -1,4 +1,4 @@
-import { SITE } from './config.js?v=1.8';
+import { SITE } from './config.js?v=1.9';
 
 // Formato de story (9:16), com respiro em cima e embaixo para a interface do aplicativo.
 const L = 1080;
@@ -162,7 +162,7 @@ export async function gerarImagem(lados, neutro = false) {
 export async function compartilhar(lados, neutro = false) {
   const blob = await gerarImagem(lados, neutro);
   const arquivo = new File([blob], 'teste-cego.png', { type: 'image/png' });
-  const texto = `Fiz o Teste Cego das eleições: escolhi propostas sem saber de quem eram. Se você ainda está indeciso, faça o seu: https://${SITE}`;
+  const texto = `Fiz o Teste Cego das eleições: escolhi propostas sem saber de quem eram. Se você ainda está indeciso, faça o seu: https://${SITE}/?o=c`;
 
   if (navigator.canShare?.({ files: [arquivo] })) {
     try {

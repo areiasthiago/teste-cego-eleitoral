@@ -5,9 +5,13 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const raiz = new URL('..', import.meta.url);
 const { rodadas } = JSON.parse(readFileSync(new URL('data/rodadas.json', raiz), 'utf8'));
 
+// Canais de chegada contados no funil por origem (js/contagem.js usa os mesmos códigos).
+const CANAIS = ['wa','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','direto','outro'];
+
 const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
   .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
+  .concat(['abriu', 'comecou', 'concluiu'].flatMap((e) => CANAIS.map((c) => `  ('_origem_${e}', '${c}')`)))
   .join(',\n');
 
 const sql = `-- Gerado por scripts/gerar-sql.mjs. Rode no SQL Editor do Supabase.
@@ -82,6 +86,21 @@ $$;
 
 revoke all on function public.resultado(text) from public;
 grant execute on function public.resultado(text) to anon;
+
+-- Funil com canal de chegada: soma na etapa e, se o canal for conhecido, na etapa daquele canal.
+create or replace function public.marcar_origem(evento text, canal text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  update contagem set total = total + 1
+   where evento in ('abriu', 'comecou', 'concluiu')
+     and (rodada = '_' || evento or (rodada = '_origem_' || evento and candidato = canal));
+$$;
+
+revoke all on function public.marcar_origem(text, text) from public;
+grant execute on function public.marcar_origem(text, text) to anon;
 `;
 
 writeFileSync(new URL('sql/contagem.sql', raiz), sql);

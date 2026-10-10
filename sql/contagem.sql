@@ -80,7 +80,52 @@ insert into public.contagem (rodada, candidato) values
   ('_concluiu', '-'),
   ('_resultado', 'lula'),
   ('_resultado', 'flavio'),
-  ('_resultado', 'empate')
+  ('_resultado', 'empate'),
+  ('_origem_abriu', 'wa'),
+  ('_origem_abriu', 'tw'),
+  ('_origem_abriu', 'ig'),
+  ('_origem_abriu', 'fb'),
+  ('_origem_abriu', 'tt'),
+  ('_origem_abriu', 'li'),
+  ('_origem_abriu', 'tg'),
+  ('_origem_abriu', 'th'),
+  ('_origem_abriu', 'bs'),
+  ('_origem_abriu', 'yt'),
+  ('_origem_abriu', 'em'),
+  ('_origem_abriu', 'busca'),
+  ('_origem_abriu', 'c'),
+  ('_origem_abriu', 'direto'),
+  ('_origem_abriu', 'outro'),
+  ('_origem_comecou', 'wa'),
+  ('_origem_comecou', 'tw'),
+  ('_origem_comecou', 'ig'),
+  ('_origem_comecou', 'fb'),
+  ('_origem_comecou', 'tt'),
+  ('_origem_comecou', 'li'),
+  ('_origem_comecou', 'tg'),
+  ('_origem_comecou', 'th'),
+  ('_origem_comecou', 'bs'),
+  ('_origem_comecou', 'yt'),
+  ('_origem_comecou', 'em'),
+  ('_origem_comecou', 'busca'),
+  ('_origem_comecou', 'c'),
+  ('_origem_comecou', 'direto'),
+  ('_origem_comecou', 'outro'),
+  ('_origem_concluiu', 'wa'),
+  ('_origem_concluiu', 'tw'),
+  ('_origem_concluiu', 'ig'),
+  ('_origem_concluiu', 'fb'),
+  ('_origem_concluiu', 'tt'),
+  ('_origem_concluiu', 'li'),
+  ('_origem_concluiu', 'tg'),
+  ('_origem_concluiu', 'th'),
+  ('_origem_concluiu', 'bs'),
+  ('_origem_concluiu', 'yt'),
+  ('_origem_concluiu', 'em'),
+  ('_origem_concluiu', 'busca'),
+  ('_origem_concluiu', 'c'),
+  ('_origem_concluiu', 'direto'),
+  ('_origem_concluiu', 'outro')
 on conflict do nothing;
 
 create or replace function public.registrar(escolhas jsonb)
@@ -136,3 +181,18 @@ $$;
 
 revoke all on function public.resultado(text) from public;
 grant execute on function public.resultado(text) to anon;
+
+-- Funil com canal de chegada: soma na etapa e, se o canal for conhecido, na etapa daquele canal.
+create or replace function public.marcar_origem(evento text, canal text)
+returns void
+language sql
+security definer
+set search_path = public
+as $$
+  update contagem set total = total + 1
+   where evento in ('abriu', 'comecou', 'concluiu')
+     and (rodada = '_' || evento or (rodada = '_origem_' || evento and candidato = canal));
+$$;
+
+revoke all on function public.marcar_origem(text, text) from public;
+grant execute on function public.marcar_origem(text, text) to anon;
