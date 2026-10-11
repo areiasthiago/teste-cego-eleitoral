@@ -1,7 +1,7 @@
-import { calcular } from './pontuacao.js?v=1.10';
-import { registrar, marcar, resultado } from './contagem.js?v=1.10';
-import { compartilhar } from './compartilhar.js?v=1.10';
-import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.10';
+import { calcular } from './pontuacao.js?v=1.11';
+import { registrar, marcar, resultado } from './contagem.js?v=1.11';
+import { compartilhar } from './compartilhar.js?v=1.11';
+import { REINICIAR_AO_RECARREGAR } from './config.js?v=1.11';
 
 const CHAVE = 'teste-cego:v2';
 const app = document.getElementById('app');
@@ -241,6 +241,11 @@ function telaResultado() {
       el('div', { class: 'par' },
         el('button', { class: 'botao principal', onclick: () => compartilhar(convite, true) }, 'Convidar alguém'),
         res.pct && el('button', { class: 'botao discreto', onclick: () => compartilhar(lados) }, 'Compartilhar meu resultado')),
+      el('a', { class: 'outro-projeto', href: 'https://palavraporpalavra.online/?o=tc' },
+        el('span', { class: 'selo' }, 'Ainda indeciso?'),
+        el('strong', {}, 'Veja quanto cada candidato fala do que importa pra você'),
+        el('span', {}, 'Escolha uma palavra, como saúde ou emprego, e compare quantas vezes cada um a usou no plano de governo e em entrevistas.'),
+        el('span', { class: 'outro-projeto-ir' }, 'Abrir o Palavra por Palavra →')),
       el('p', { class: 'aviso' }, 'O percentual mede só as propostas deste teste, resumidas por nós. Não é pesquisa eleitoral nem recomendação de voto. Ilustrações geradas por inteligência artificial. ',
         el('a', { href: 'sobre.html' }, 'Como funciona'), '.'),
       areas,
@@ -250,7 +255,7 @@ function telaResultado() {
 }
 
 async function iniciar() {
-  dados = await (await fetch('data/rodadas.json?v=1.10')).json();
+  dados = await (await fetch('data/rodadas.json?v=1.11')).json();
   const validos = new Set(dados.rodadas.map((r) => r.id));
   estado = REINICIAR_AO_RECARREGAR ? null : lerEstado();
   // Estado salvo de uma versão com outras rodadas: completa a ordem em vez de zerar.

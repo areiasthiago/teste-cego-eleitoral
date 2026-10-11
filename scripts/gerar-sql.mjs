@@ -6,7 +6,7 @@ const raiz = new URL('..', import.meta.url);
 const { rodadas } = JSON.parse(readFileSync(new URL('data/rodadas.json', raiz), 'utf8'));
 
 // Canais de chegada contados no funil por origem (js/contagem.js usa os mesmos códigos).
-const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','direto','outro'];
+const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','direto','outro'];
 
 const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))

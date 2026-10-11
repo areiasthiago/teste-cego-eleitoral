@@ -1,8 +1,8 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.10';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.11';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';
-const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','direto','outro'];
+const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','direto','outro'];
 
 // Por qual canal a pessoa chegou: a etiqueta do link (?o=tw) ou, sem ela, o site de onde
 // o navegador diz ter vindo. Aplicativos de mensagem não informam nada: contam como 'direto'.
@@ -10,13 +10,14 @@ function canalDeChegada() {
   const etiqueta = new URLSearchParams(location.search).get('o');
   if (CANAIS.includes(etiqueta)) return etiqueta;
   let de = '';
-  try { de = new URL(document.referrer).hostname.replace(/^www./, ''); } catch { return 'direto'; }
+  try { de = new URL(document.referrer).hostname.replace(/^www\./, ''); } catch { return 'direto'; }
   if (!de || de === location.hostname) return 'direto';
   const mapa = [
-    [/(^|.)(t.co|twitter.com|x.com)$/, 'tw'], [/(^|.)instagram.com$/, 'ig'], [/(^|.)(facebook.com|fb.com|fb.me)$/, 'fb'],
-    [/(^|.)(whatsapp.com|wa.me)$/, 'wa'], [/(^|.)tiktok.com$/, 'tt'], [/(^|.)(linkedin.com|lnkd.in)$/, 'li'],
-    [/(^|.)(t.me|telegram.org)$/, 'tg'], [/(^|.)threads.(net|com)$/, 'th'], [/(^|.)bsky.app$/, 'bs'],
-    [/(^|.)(youtube.com|youtu.be)$/, 'yt'], [/(^|.)(google.[a-z.]+|bing.com|duckduckgo.com|yahoo.com)$/, 'busca'],
+    [/(^|\.)(t\.co|twitter\.com|x\.com)$/, 'tw'], [/(^|\.)instagram\.com$/, 'ig'], [/(^|\.)(facebook\.com|fb\.com|fb\.me)$/, 'fb'],
+    [/(^|\.)(whatsapp\.com|wa\.me)$/, 'wa'], [/(^|\.)tiktok\.com$/, 'tt'], [/(^|\.)(linkedin\.com|lnkd\.in)$/, 'li'],
+    [/(^|\.)(t\.me|telegram\.org)$/, 'tg'], [/(^|\.)threads\.(net|com)$/, 'th'], [/(^|\.)bsky\.app$/, 'bs'],
+    [/(^|\.)(youtube\.com|youtu\.be)$/, 'yt'], [/(^|\.)(google\.[a-z.]+|bing\.com|duckduckgo\.com|yahoo\.com)$/, 'busca'],
+    [/(^|\.)palavraporpalavra\.online$/, 'pp'],
   ];
   return (mapa.find(([padrao]) => padrao.test(de)) || [null, 'outro'])[1];
 }
