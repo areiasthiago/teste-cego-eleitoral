@@ -98,6 +98,7 @@ insert into public.contagem (rodada, candidato) values
   ('_origem_abriu', 'c'),
   ('_origem_abriu', 'pp'),
   ('_origem_abriu', 'hl'),
+  ('_origem_abriu', 'teste'),
   ('_origem_abriu', 'direto'),
   ('_origem_abriu', 'outro'),
   ('_origem_comecou', 'wa'),
@@ -117,6 +118,7 @@ insert into public.contagem (rodada, candidato) values
   ('_origem_comecou', 'c'),
   ('_origem_comecou', 'pp'),
   ('_origem_comecou', 'hl'),
+  ('_origem_comecou', 'teste'),
   ('_origem_comecou', 'direto'),
   ('_origem_comecou', 'outro'),
   ('_origem_concluiu', 'wa'),
@@ -136,6 +138,7 @@ insert into public.contagem (rodada, candidato) values
   ('_origem_concluiu', 'c'),
   ('_origem_concluiu', 'pp'),
   ('_origem_concluiu', 'hl'),
+  ('_origem_concluiu', 'teste'),
   ('_origem_concluiu', 'direto'),
   ('_origem_concluiu', 'outro'),
   ('_mix_lula', 'lula'),
@@ -244,7 +247,7 @@ set search_path = public
 as $$
   update contagem set total = total + 1
    where evento in ('abriu', 'comecou', 'concluiu')
-     and (rodada = '_' || evento or (rodada = '_origem_' || evento and candidato = canal));
+     and ((rodada = '_' || evento and canal <> 'teste') or (rodada = '_origem_' || evento and candidato = canal));
 $$;
 
 revoke all on function public.marcar_origem(text, text) from public;

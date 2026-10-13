@@ -1,8 +1,8 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.14';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.15';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';
-const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','hl','direto','outro'];
+const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','hl','teste','direto','outro'];
 
 // Por qual canal a pessoa chegou: a etiqueta do link (?o=tw) ou, sem ela, o site de onde
 // o navegador diz ter vindo. Aplicativos de mensagem não informam nada: contam como 'direto'.
@@ -60,13 +60,20 @@ export function marcar(evento, { novo = false } = {}) {
 }
 
 // Quem ficou na frente neste teste: 'lula', 'flavio' ou 'empate'. Soma em um de três totais.
+// Aparelho que chegou pelo link de teste (?o=teste): fica fora de toda a contagem geral.
+function ehTeste() {
+  try { return localStorage.getItem(ORIGEM) === 'teste'; } catch { return false; }
+}
+
 export function resultado(lider) {
+  if (ehTeste()) return Promise.resolve(false);
   return chamar('resultado', { lider });
 }
 
 // Envia só pares (rodada, lado escolhido). Sem identificador, sem percentual
 // individual. Falhar aqui nunca pode atrapalhar o quiz.
 export async function registrar(rodadas, respostas) {
+  if (ehTeste()) return false;
   const escolhas = rodadas
     .filter((rodada) => respostas[rodada.id])
     .map((rodada) => ({ rodada: rodada.id, candidato: respostas[rodada.id].escolha ?? 'nenhum' }));
