@@ -1,8 +1,8 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.12';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.14';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';
-const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','direto','outro'];
+const CANAIS = ['wa','wam','was','tw','ig','fb','tt','li','tg','th','bs','yt','em','busca','c','pp','hl','direto','outro'];
 
 // Por qual canal a pessoa chegou: a etiqueta do link (?o=tw) ou, sem ela, o site de onde
 // o navegador diz ter vindo. Aplicativos de mensagem não informam nada: contam como 'direto'.
