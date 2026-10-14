@@ -13,6 +13,8 @@ const linhas = rodadas
   .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
   .concat(['abriu', 'comecou', 'concluiu'].flatMap((e) => CANAIS.map((c) => `  ('_origem_${e}', '${c}')`)))
   .concat(['lula', 'flavio', 'empate'].flatMap((g) => CANAIS.map((c) => `  ('_resultado_${g}', '${c}')`)))
+  .concat(CANAIS.flatMap((c) => rodadas.flatMap((r) => ['lula', 'flavio', 'nenhum'].map((l) => `  ('_rc_${c}', '${r.id}:${l}')`))))
+  .concat(['lula', 'flavio', 'empate'].flatMap((g) => CANAIS.flatMap((c) => ['lula', 'flavio', 'nenhum', 'testes'].map((l) => `  ('_mixc_${g}_${c}', '${l}')`))))
   .concat(['lula', 'flavio', 'empate'].flatMap((g) => ['lula', 'flavio', 'nenhum', 'testes', 'var_n', 'var_soma', 'var_quad'].map((c) => `  ('_mix_${g}', '${c}')`)))
   .join(',\n');
 
@@ -35,7 +37,8 @@ insert into public.contagem (rodada, candidato) values
 ${linhas}
 on conflict do nothing;
 
-create or replace function public.registrar(escolhas jsonb)
+drop function if exists public.registrar(jsonb);
+create or replace function public.registrar(escolhas jsonb, canal text default null)
 returns void
 language plpgsql
 security definer
@@ -75,11 +78,28 @@ begin
              else 1 end
      where rodada = '_mix_' || grupo;
   end if;
+
+  -- O mesmo recorte por canal de chegada: escolhas por rodada e composição por grupo.
+  -- Só soma em linhas que já existem, então canal ou rodada inválidos são ignorados.
+  if canal is not null then
+    update contagem c
+       set total = c.total + 1
+      from (
+        select distinct e->>'rodada' as rodada, e->>'candidato' as candidato
+          from jsonb_array_elements(escolhas) e
+      ) x
+     where c.rodada = '_rc_' || canal and c.candidato = x.rodada || ':' || x.candidato;
+    if l + f > 0 then
+      update contagem
+         set total = total + case candidato when 'lula' then l when 'flavio' then f when 'nenhum' then n else 1 end
+       where rodada = '_mixc_' || grupo || '_' || canal;
+    end if;
+  end if;
 end;
 $$;
 
-revoke all on function public.registrar(jsonb) from public;
-grant execute on function public.registrar(jsonb) to anon;
+revoke all on function public.registrar(jsonb, text) from public;
+grant execute on function public.registrar(jsonb, text) to anon;
 
 -- Funil de engajamento: abriu o site, começou o teste, concluiu. Também só totais.
 create or replace function public.marcar(evento text)

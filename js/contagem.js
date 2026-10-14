@@ -1,4 +1,4 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.17';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.18';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';
@@ -79,5 +79,7 @@ export async function registrar(rodadas, respostas) {
   const escolhas = rodadas
     .filter((rodada) => respostas[rodada.id])
     .map((rodada) => ({ rodada: rodada.id, candidato: respostas[rodada.id].escolha ?? 'nenhum' }));
-  return chamar('registrar', { escolhas });
+  let canal = '';
+  try { canal = localStorage.getItem(ORIGEM) || ''; } catch { /* sem canal */ }
+  return chamar('registrar', { escolhas, canal });
 }
