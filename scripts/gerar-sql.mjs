@@ -12,6 +12,7 @@ const linhas = rodadas
   .flatMap((r) => ['lula', 'flavio', 'nenhum'].map((c) => `  ('${r.id}', '${c}')`))
   .concat("  ('_concluidos', '-')", "  ('_abriu', '-')", "  ('_comecou', '-')", "  ('_concluiu', '-')", "  ('_resultado', 'lula')", "  ('_resultado', 'flavio')", "  ('_resultado', 'empate')")
   .concat(['abriu', 'comecou', 'concluiu'].flatMap((e) => CANAIS.map((c) => `  ('_origem_${e}', '${c}')`)))
+  .concat(['lula', 'flavio', 'empate'].flatMap((g) => CANAIS.map((c) => `  ('_resultado_${g}', '${c}')`)))
   .concat(['lula', 'flavio', 'empate'].flatMap((g) => ['lula', 'flavio', 'nenhum', 'testes', 'var_n', 'var_soma', 'var_quad'].map((c) => `  ('_mix_${g}', '${c}')`)))
   .join(',\n');
 
@@ -94,19 +95,23 @@ $$;
 revoke all on function public.marcar(text) from public;
 grant execute on function public.marcar(text) to anon;
 
--- Quem ficou na frente em cada teste concluído. Só três totais: lula, flavio e empate.
-create or replace function public.resultado(lider text)
+-- Quem ficou na frente em cada teste concluído: soma no total geral (_resultado) e,
+-- se o canal de chegada for conhecido, no total daquele canal (_resultado_<lider>). Só totais.
+drop function if exists public.resultado(text);
+create or replace function public.resultado(lider text, canal text default null)
 returns void
 language sql
 security definer
 set search_path = public
 as $$
   update contagem set total = total + 1
-   where rodada = '_resultado' and candidato = lider and lider in ('lula', 'flavio', 'empate');
+   where lider in ('lula', 'flavio', 'empate')
+     and ((rodada = '_resultado' and candidato = lider)
+       or (rodada = '_resultado_' || lider and candidato = canal));
 $$;
 
-revoke all on function public.resultado(text) from public;
-grant execute on function public.resultado(text) to anon;
+revoke all on function public.resultado(text, text) from public;
+grant execute on function public.resultado(text, text) to anon;
 
 -- Funil com canal de chegada: soma na etapa e, se o canal for conhecido, na etapa daquele canal.
 create or replace function public.marcar_origem(evento text, canal text)

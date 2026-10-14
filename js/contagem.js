@@ -1,4 +1,4 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.16';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.17';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';
@@ -67,7 +67,9 @@ function ehTeste() {
 
 export function resultado(lider) {
   if (ehTeste()) return Promise.resolve(false);
-  return chamar('resultado', { lider });
+  let canal = '';
+  try { canal = localStorage.getItem(ORIGEM) || ''; } catch { /* sem canal */ }
+  return chamar('resultado', { lider, canal });
 }
 
 // Envia só pares (rodada, lado escolhido). Sem identificador, sem percentual

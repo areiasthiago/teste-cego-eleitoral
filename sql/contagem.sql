@@ -144,6 +144,69 @@ insert into public.contagem (rodada, candidato) values
   ('_origem_concluiu', 'teste'),
   ('_origem_concluiu', 'direto'),
   ('_origem_concluiu', 'outro'),
+  ('_resultado_lula', 'wa'),
+  ('_resultado_lula', 'wam'),
+  ('_resultado_lula', 'was'),
+  ('_resultado_lula', 'tw'),
+  ('_resultado_lula', 'ig'),
+  ('_resultado_lula', 'fb'),
+  ('_resultado_lula', 'tt'),
+  ('_resultado_lula', 'li'),
+  ('_resultado_lula', 'tg'),
+  ('_resultado_lula', 'th'),
+  ('_resultado_lula', 'bs'),
+  ('_resultado_lula', 'yt'),
+  ('_resultado_lula', 'em'),
+  ('_resultado_lula', 'busca'),
+  ('_resultado_lula', 'c'),
+  ('_resultado_lula', 'pp'),
+  ('_resultado_lula', 'hl'),
+  ('_resultado_lula', 'ra'),
+  ('_resultado_lula', 'teste'),
+  ('_resultado_lula', 'direto'),
+  ('_resultado_lula', 'outro'),
+  ('_resultado_flavio', 'wa'),
+  ('_resultado_flavio', 'wam'),
+  ('_resultado_flavio', 'was'),
+  ('_resultado_flavio', 'tw'),
+  ('_resultado_flavio', 'ig'),
+  ('_resultado_flavio', 'fb'),
+  ('_resultado_flavio', 'tt'),
+  ('_resultado_flavio', 'li'),
+  ('_resultado_flavio', 'tg'),
+  ('_resultado_flavio', 'th'),
+  ('_resultado_flavio', 'bs'),
+  ('_resultado_flavio', 'yt'),
+  ('_resultado_flavio', 'em'),
+  ('_resultado_flavio', 'busca'),
+  ('_resultado_flavio', 'c'),
+  ('_resultado_flavio', 'pp'),
+  ('_resultado_flavio', 'hl'),
+  ('_resultado_flavio', 'ra'),
+  ('_resultado_flavio', 'teste'),
+  ('_resultado_flavio', 'direto'),
+  ('_resultado_flavio', 'outro'),
+  ('_resultado_empate', 'wa'),
+  ('_resultado_empate', 'wam'),
+  ('_resultado_empate', 'was'),
+  ('_resultado_empate', 'tw'),
+  ('_resultado_empate', 'ig'),
+  ('_resultado_empate', 'fb'),
+  ('_resultado_empate', 'tt'),
+  ('_resultado_empate', 'li'),
+  ('_resultado_empate', 'tg'),
+  ('_resultado_empate', 'th'),
+  ('_resultado_empate', 'bs'),
+  ('_resultado_empate', 'yt'),
+  ('_resultado_empate', 'em'),
+  ('_resultado_empate', 'busca'),
+  ('_resultado_empate', 'c'),
+  ('_resultado_empate', 'pp'),
+  ('_resultado_empate', 'hl'),
+  ('_resultado_empate', 'ra'),
+  ('_resultado_empate', 'teste'),
+  ('_resultado_empate', 'direto'),
+  ('_resultado_empate', 'outro'),
   ('_mix_lula', 'lula'),
   ('_mix_lula', 'flavio'),
   ('_mix_lula', 'nenhum'),
@@ -227,19 +290,23 @@ $$;
 revoke all on function public.marcar(text) from public;
 grant execute on function public.marcar(text) to anon;
 
--- Quem ficou na frente em cada teste concluído. Só três totais: lula, flavio e empate.
-create or replace function public.resultado(lider text)
+-- Quem ficou na frente em cada teste concluído: soma no total geral (_resultado) e,
+-- se o canal de chegada for conhecido, no total daquele canal (_resultado_<lider>). Só totais.
+drop function if exists public.resultado(text);
+create or replace function public.resultado(lider text, canal text default null)
 returns void
 language sql
 security definer
 set search_path = public
 as $$
   update contagem set total = total + 1
-   where rodada = '_resultado' and candidato = lider and lider in ('lula', 'flavio', 'empate');
+   where lider in ('lula', 'flavio', 'empate')
+     and ((rodada = '_resultado' and candidato = lider)
+       or (rodada = '_resultado_' || lider and candidato = canal));
 $$;
 
-revoke all on function public.resultado(text) from public;
-grant execute on function public.resultado(text) to anon;
+revoke all on function public.resultado(text, text) from public;
+grant execute on function public.resultado(text, text) to anon;
 
 -- Funil com canal de chegada: soma na etapa e, se o canal for conhecido, na etapa daquele canal.
 create or replace function public.marcar_origem(evento text, canal text)
