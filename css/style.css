@@ -474,7 +474,8 @@ body:has(.rodada) .rodape { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* Página de resultados (balanço final, publicado depois da votação) */
+/* Página de resultados (balanço final, publicado depois da votação).
+   A pedido do Thiago, depois da eleição os gráficos usam vermelho para Lula e azul para Flávio. */
 .resultados { display: flex; flex-direction: column; gap: 22px; }
 .resultados h1 { font-size: clamp(2rem, 8.5vw, 3rem); }
 .res-aviso { padding: 12px 14px; border: 2.5px dashed var(--traco); border-radius: var(--raio); background: var(--papel); font-size: 0.95rem; }
@@ -485,8 +486,8 @@ body:has(.rodada) .rodape { display: none; }
 .res-nota { color: var(--suave); font-size: 0.88rem; }
 .res-barra { display: flex; height: 22px; border: 2.5px solid var(--traco); border-radius: 999px; overflow: hidden; background: var(--papel); }
 .res-barra span + span { border-left: 2px solid var(--traco); }
-.res-l { background: var(--realce); }
-.res-f { background: var(--principal); }
+.res-l { background: #e65050; }
+.res-f { background: #4a86f5; }
 .res-n { background: var(--linha); }
 .res-legenda { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; font-size: 0.92rem; }
 .res-legenda li { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
@@ -511,6 +512,3 @@ body:has(.rodada) .rodape { display: none; }
 .res-numeros span { font-size: 0.82rem; font-weight: 700; color: var(--suave); line-height: 1.25; }
 .res-numeros strong { font: 800 clamp(2rem, 9vw, 2.6rem)/1.05 var(--titulo); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .res-numeros small { font-size: 0.78rem; color: var(--suave); line-height: 1.3; }
-/* Exceção pedida pelo Thiago depois da eleição: "Rodada por rodada" em vermelho (Lula) e azul (Flávio) */
-.res-cores .res-l { background: #e65050; }
-.res-cores .res-f { background: #4a86f5; }
