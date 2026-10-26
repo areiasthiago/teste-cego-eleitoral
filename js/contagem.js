@@ -1,4 +1,4 @@
-import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.18';
+import { CONTAGEM, ENVIAR_CONTAGEM } from './config.js?v=1.19';
 
 const MEDIDO = 'teste-cego:medido';
 const ORIGEM = 'teste-cego:origem';

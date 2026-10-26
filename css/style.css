@@ -473,3 +473,34 @@ body:has(.rodada) .rodape { display: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Página de resultados (balanço final, publicado depois da votação) */
+.resultados { display: flex; flex-direction: column; gap: 22px; }
+.resultados h1 { font-size: clamp(2rem, 8.5vw, 3rem); }
+.res-aviso { padding: 12px 14px; border: 2.5px dashed var(--traco); border-radius: var(--raio); background: var(--papel); font-size: 0.95rem; }
+.res-cartao { display: flex; flex-direction: column; gap: 12px; padding: 18px 16px; border: 2.5px solid var(--traco); border-radius: var(--raio); background: var(--papel); box-shadow: 5px 5px 0 var(--sombra); }
+.res-cartao h2 { font-size: clamp(1.3rem, 5.4vw, 1.6rem); }
+.res-cartao ul:not(.res-legenda) { margin: 0; padding-left: 20px; }
+.res-cartao li + li { margin-top: 6px; }
+.res-nota { color: var(--suave); font-size: 0.88rem; }
+.res-barra { display: flex; height: 22px; border: 2.5px solid var(--traco); border-radius: 999px; overflow: hidden; background: var(--papel); }
+.res-barra span + span { border-left: 2px solid var(--traco); }
+.res-l { background: var(--realce); }
+.res-f { background: var(--principal); }
+.res-n { background: var(--linha); }
+.res-legenda { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; font-size: 0.92rem; }
+.res-legenda li { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.res-legenda i { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--traco); border-radius: 4px; }
+.res-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.res-trio div { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 2.5px solid var(--traco); border-radius: 14px; min-width: 0; }
+.res-trio div:first-child { background: var(--realce-claro); }
+.res-trio span { font-size: 0.8rem; font-weight: 700; color: var(--suave); }
+.res-trio strong { font: 800 clamp(1.6rem, 7vw, 2.2rem)/1.05 var(--titulo); font-variant-numeric: tabular-nums; }
+.res-rodadas { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.res-rodada { display: flex; flex-direction: column; gap: 6px; margin: 0 !important; }
+.res-rodada-topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 10px; }
+.res-rodada-topo strong { font-family: var(--titulo); font-weight: 800; }
+.res-rodada-topo span { color: var(--suave); font-size: 0.8rem; }
+.res-num { font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.res-num span { color: var(--suave); }
+.res-voltar { display: flex; justify-content: center; }
